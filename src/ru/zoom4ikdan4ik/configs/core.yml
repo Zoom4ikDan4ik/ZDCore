@@ -1,12 +1,11 @@
 Config:
   Server: server
-  MainWorld: world
   ScriptsPath: /home/scripts/
   Messages:
-    - NumberException:::&cНедостаточно параметров!
-    - ConsoleSender:::&cЭту команду может использовать только игрок!
-    - NotFoundParametrs:::&cНеизвестные параметры!
-    - HaventPermission:::&cНедостаточно прав!
+    NUMBER_EXCEPTIONS: "&cНедостаточно параметров!"
+    CONSOLE_SENDER: "&cЭту команду может использовать только игрок!"
+    NOT_FOUND_PARAMETRS: "&cНеизвестные параметры!"
+    NOT_HAVE_PERMISSIONS: "&cНедостаточно прав!"
 MySQL:
   Host: localhost
   Port: 3306

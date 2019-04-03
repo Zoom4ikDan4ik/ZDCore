@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SchedulerManager extends Thread implements ISchedulerManager {
-
     private BukkitScheduler scheduler = Bukkit.getServer().getScheduler();
     private List<Runnable> runnables = new ArrayList<>();
 
@@ -30,24 +29,24 @@ public class SchedulerManager extends Thread implements ISchedulerManager {
     }
 
     public void stopScheduler() {
-        scheduler.cancelTasks(corePlugin);
+        this.scheduler.cancelTasks(corePlugin);
     }
 
     public void clearScheduler() {
-        runnables.clear();
+        this.runnables.clear();
     }
 
     public void removeScheduler(Runnable runnable) {
-        runnables.remove(runnable);
+        this.runnables.remove(runnable);
     }
 
     public void addScheduler(Runnable runnable) {
-        runnables.add(runnable);
+        this.runnables.add(runnable);
     }
 
     @Override
     public void addScheduler() {
-        schedulerManager.addScheduler(new PluginsManagerRunnable());
+        this.schedulerManager.addScheduler(new PluginsManagerRunnable());
     }
 
 }

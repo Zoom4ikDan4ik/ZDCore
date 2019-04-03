@@ -9,41 +9,40 @@ import java.util.Iterator;
 import java.util.Map;
 
 public class PluginsManager implements IPluginsManager {
-
-    private Map<String, Boolean> Modules = new HashMap<>();
+    private Map<String, Boolean> modules = new HashMap<>();
 
     public void reloadPlugins() {
         schedulerManager.clearScheduler();
 
-        corePlugin.registerPlugin(iCore, corePlugin);
+        corePlugin.registerPlugin(corePlugin, corePlugin);
 
-        checkingModules();
+        this.checkingModules();
 
-        for (String key : Modules.keySet()) {
+        for (String key : modules.keySet()) {
             disablePlugin(getPlugin(key));
             enablePlugin(getPlugin(key));
         }
     }
 
     public void disablingPlugins() {
-        for (String key : Modules.keySet())
+        for (String key : modules.keySet())
             disablePlugin(getPlugin(key));
     }
 
     public void checkingModules() {
-        Iterator<Map.Entry<String, Boolean>> it = Modules.entrySet().iterator();
+        Iterator<Map.Entry<String, Boolean>> it = modules.entrySet().iterator();
         Map<String, Boolean> newMap = new HashMap<String, Boolean>();
 
         while (it.hasNext()) {
             final Map.Entry<String, Boolean> key = it.next();
 
-            if (getPlugin(key.getKey()) != null) {
+            if (this.getPlugin(key.getKey()) != null) {
                 if (key.getValue()) {
                     newMap.put(key.getKey(), key.getValue());
 
                     loggerUtils.info(corePlugin, key.getKey() + " найден! =)");
                 } else {
-                    Bukkit.getScheduler().runTask(corePlugin, () -> disablePlugin(bukkitPluginManager.getPlugin(key.getKey())));
+                    Bukkit.getScheduler().runTask(corePlugin, () -> this.disablePlugin(bukkitPluginManager.getPlugin(key.getKey())));
 
                     loggerUtils.info(corePlugin, key.getKey() + " найден и выключен! =|");
                 }
@@ -54,7 +53,7 @@ public class PluginsManager implements IPluginsManager {
             }
         }
 
-        Modules = newMap;
+        this.modules = newMap;
     }
 
     public boolean isEnabledPlugin(String plugin) {
@@ -78,6 +77,6 @@ public class PluginsManager implements IPluginsManager {
     }
 
     public void put(String key, boolean flag) {
-        Modules.put(key, flag);
+        this.modules.put(key, flag);
     }
 }

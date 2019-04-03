@@ -10,7 +10,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BukkitMethods implements IBase {
-
     public List<World> getWorlds() {
         return Bukkit.getWorlds();
     }

@@ -4,6 +4,7 @@ import org.bukkit.ChatColor;
 import org.bukkit.World;
 import org.bukkit.command.CommandSender;
 import org.bukkit.plugin.Plugin;
+import ru.zoom4ikdan4ik.core.enums.MessagesEnum;
 import ru.zoom4ikdan4ik.core.interfaces.IBase;
 
 import java.io.File;
@@ -13,7 +14,6 @@ import java.io.InputStream;
 import java.util.List;
 
 public class CoreMethods implements IBase {
-
     public String color(String string) {
         return ChatColor.translateAlternateColorCodes('&', string);
     }
@@ -33,17 +33,21 @@ public class CoreMethods implements IBase {
     }
 
     public World getMainWorld() {
-        return configManager.MainWorld;
+        return configManager.main_world;
     }
 
     public String getPathServer(String server) {
-        return getPathServer().replace(configManager.Server, server);
+        return this.getPathServer().replace(configManager.server, server);
     }
 
     public void sendMessageQuery(CommandSender sender, String start) {
-        String[] str = getQuery(start, configManager.Messages).split(":::");
+        String message = null;
 
-        this.sendMessage(sender, str[1]);
+        for (MessagesEnum messagesEnum : MessagesEnum.values())
+            if (messagesEnum.name().equals(start))
+                message = messagesEnum.getMessage();
+
+        this.sendMessage(sender, message);
     }
 
     public String getQuery(String start, List<String> querysList) {
@@ -59,7 +63,7 @@ public class CoreMethods implements IBase {
     }
 
     public void useScripts(String script) throws IOException {
-        File file = new File(configManager.ScriptsPath + script);
+        File file = new File(configManager.scripts_path + script);
 
         if (!file.exists())
             throw new IOException("File not found!");

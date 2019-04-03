@@ -9,13 +9,13 @@ public class PluginsManagerRunnable implements Runnable, IBase {
     @Override
     public void run() {
         for (Plugin plugin : Core.plugins.keySet())
-            if (configManager.config.get("Modules." + plugin.getName()) == null)
-                configManager.config.set("Modules." + plugin.getName(), true);
+            if (configManager.getConfig().get("Modules." + plugin.getName()) == null)
+                configManager.getConfig().set("Modules." + plugin.getName(), true);
 
-        configManager.save();
+        configManager.saveConfig();
 
-        for (String key : configManager.config.getConfigurationSection("Modules").getKeys(false))
-            pluginsManager.put(key, configManager.config.getConfigurationSection("Modules").getBoolean(key));
+        for (String key : configManager.getConfig().getConfigurationSection("Modules").getKeys(false))
+            pluginsManager.put(key, configManager.getConfig().getConfigurationSection("Modules").getBoolean(key));
 
         loggerUtils.info(corePlugin, "Checking addons...");
 

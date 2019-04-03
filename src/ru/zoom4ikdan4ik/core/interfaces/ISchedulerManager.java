@@ -6,5 +6,4 @@ package ru.zoom4ikdan4ik.core.interfaces;
 public interface ISchedulerManager extends IBase {
 
     void addScheduler();
-
 }

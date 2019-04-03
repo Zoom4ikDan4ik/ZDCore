@@ -2,6 +2,7 @@ package ru.zoom4ikdan4ik.core.managers;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
+import ru.zoom4ikdan4ik.core.enums.MessagesEnum;
 import ru.zoom4ikdan4ik.core.interfaces.ICommandManager;
 
 import java.io.IOException;
@@ -19,7 +20,7 @@ public class CommandManager implements ICommandManager {
                         pluginsManager.reloadPlugins();
 
                         coreMethods.sendMessage(sender, "&aПлагины были перезагружены!");
-                    } else coreMethods.sendMessage(sender, configManager.Messages.get(3).split(":::")[1]);
+                    } else coreMethods.sendMessage(sender, MessagesEnum.NOT_HAVE_PERMISSIONS.getMessage());
                     break;
                 case "script":
                     if (args.length > 1) {
@@ -32,14 +33,14 @@ public class CommandManager implements ICommandManager {
 
                                 coreMethods.sendMessage(sender, "&cОшибка: " + e.getMessage());
                             }
-                        } else coreMethods.sendMessage(sender, configManager.Messages.get(3).split(":::")[1]);
-                    } else coreMethods.sendMessage(sender, configManager.Messages.get(0).split(":::")[1]);
+                        } else coreMethods.sendMessage(sender, MessagesEnum.NOT_HAVE_PERMISSIONS.getMessage());
+                    } else coreMethods.sendMessage(sender, MessagesEnum.NUMBER_EXCEPTIONS.getMessage());
                     break;
                 default:
-                    coreMethods.sendMessage(sender, configManager.Messages.get(2).split(":::")[1]);
+                    coreMethods.sendMessage(sender, MessagesEnum.NOT_FOUND_PARAMETERS.getMessage());
                     break;
             }
-        } else coreMethods.sendMessage(sender, configManager.Messages.get(0).split(":::")[1]);
+        } else coreMethods.sendMessage(sender, MessagesEnum.NUMBER_EXCEPTIONS.getMessage());
 
         return true;
     }

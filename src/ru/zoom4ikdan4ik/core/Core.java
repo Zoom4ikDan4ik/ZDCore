@@ -11,7 +11,7 @@ import java.util.Map;
 /**
  * Main class for ZDCore
  * */
-public class Core extends JavaPlugin implements IBase {
+public class Core extends JavaPlugin implements ICore, IBase {
 
     /**
      * Record all of the plugins that work from ZDCore
@@ -23,7 +23,7 @@ public class Core extends JavaPlugin implements IBase {
      * */
     @Override
     public void onEnable() {
-        this.registerPlugin(iCore, corePlugin);
+        this.registerPlugin(corePlugin, corePlugin);
 
         loggerUtils.info(corePlugin, "Starting scheduler...");
 
@@ -36,6 +36,26 @@ public class Core extends JavaPlugin implements IBase {
     @Override
     public void onDisable() {
         pluginsManager.disablingPlugins();
+    }
+
+    @Override
+    public IConfigManager getConfigManager() {
+        return configManager;
+    }
+
+    @Override
+    public IMySQLManager getMySQLManager() {
+        return mySQLManager;
+    }
+
+    @Override
+    public ISchedulerManager getSchedulerManager() {
+        return schedulerManager;
+    }
+
+    @Override
+    public ICommandManager getCommandManager() {
+        return commandManager;
     }
 
     /**
