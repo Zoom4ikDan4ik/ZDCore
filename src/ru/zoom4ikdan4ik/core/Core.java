@@ -68,24 +68,29 @@ public class Core extends JavaPlugin implements ICore, IBase {
         IConfigManager config = manager.getConfigManager();
         if (config != null) {
             loggerUtils.info(plugin, "Loading configs...");
+
             config.loadConfig();
+            config.saveConfig();
         }
 
         IMySQLManager mysql = manager.getMySQLManager();
         if (mysql != null) {
             loggerUtils.info(plugin, "Create tables...");
+
             mysql.createTables();
         }
 
         ISchedulerManager scheduler = manager.getSchedulerManager();
         if (scheduler != null) {
             loggerUtils.info(plugin, "Add schedulers...");
+
             scheduler.addScheduler();
         }
 
         ICommandManager command = manager.getCommandManager();
         if (command != null) {
             loggerUtils.info(plugin, "Register commands...");
+            
             Bukkit.getPluginCommand(plugin.getName().toLowerCase()).setExecutor(command);
         }
     }
