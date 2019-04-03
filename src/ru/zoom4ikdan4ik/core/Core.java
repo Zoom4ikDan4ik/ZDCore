@@ -90,7 +90,7 @@ public class Core extends JavaPlugin implements ICore, IBase {
         ICommandManager command = manager.getCommandManager();
         if (command != null) {
             loggerUtils.info(plugin, "Register commands...");
-            
+
             Bukkit.getPluginCommand(plugin.getName().toLowerCase()).setExecutor(command);
         }
     }

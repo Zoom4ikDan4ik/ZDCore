@@ -1,14 +1,5 @@
-Config:
-  Server: server
-  ScriptsPath: /home/scripts/
-  Messages:
-    NUMBER_EXCEPTIONS: "&cНедостаточно параметров!"
-    CONSOLE_SENDER: "&cЭту команду может использовать только игрок!"
-    NOT_FOUND_PARAMETRS: "&cНеизвестные параметры!"
-    NOT_HAVE_PERMISSIONS: "&cНедостаточно прав!"
-MySQL:
-  Host: localhost
-  Port: 3306
-  User: root
-  Database: root
-  Password: password
+Messages:
+  NUMBER_EXCEPTIONS: "&cНедостаточно параметров!"
+  CONSOLE_SENDER: "&cЭту команду может использовать только игрок!"
+  NOT_FOUND_PARAMETRS: "&cНеизвестные параметры!"
+  NOT_HAVE_PERMISSIONS: "&cНедостаточно прав!"

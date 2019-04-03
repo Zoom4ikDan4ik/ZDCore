@@ -9,7 +9,7 @@ public class MySQLManager implements IMySQLManager {
 
     private Connection connection;
 
-    public Connection getConnection(String host, String port, String database, String user, String password) {
+    public Connection getConnection(String host, int port, String database, String user, String password) {
         try {
             connection = DriverManager.getConnection(
                     "jdbc:mysql://" + host + ":" + port + "/" + database + "?useUnicode=true&characterEncoding=UTF-8",
