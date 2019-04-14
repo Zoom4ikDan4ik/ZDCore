@@ -9,7 +9,6 @@ import java.sql.Statement;
 import java.util.function.Function;
 
 public class SQLBase implements IBase {
-
     public boolean isConnection(Connection connection) throws SQLException {
         if (connection == null) {
             loggerUtils.info(corePlugin, "Could not connect to the database");

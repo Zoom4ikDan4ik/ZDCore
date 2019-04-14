@@ -6,6 +6,8 @@ import ru.zoom4ikdan4ik.core.managers.base.SQLBase;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.util.function.Function;
 
 public class SQLiteManager extends SQLBase implements ISQLManager {
     private Connection sqliteConnection;
@@ -27,5 +29,13 @@ public class SQLiteManager extends SQLBase implements ISQLManager {
         }
 
         return null;
+    }
+
+    public void executeUpdate(String query) {
+        super.executeUpdate(this.sqliteConnection, query);
+    }
+
+    public <R> R executeResultSet(String query, Function<ResultSet, R> func) {
+        return super.executeResultSet(this.sqliteConnection, query, func);
     }
 }
