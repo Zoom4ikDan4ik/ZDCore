@@ -2,6 +2,7 @@ ru.zoom4ikdan4ik.core
 ru.zoom4ikdan4ik.core.enums
 ru.zoom4ikdan4ik.core.interfaces
 ru.zoom4ikdan4ik.core.managers
+ru.zoom4ikdan4ik.core.managers.base
 ru.zoom4ikdan4ik.core.methods
 ru.zoom4ikdan4ik.core.runnables
 ru.zoom4ikdan4ik.core.utils
