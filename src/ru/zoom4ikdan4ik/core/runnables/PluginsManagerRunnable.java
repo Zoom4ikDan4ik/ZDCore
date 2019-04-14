@@ -1,14 +1,13 @@
 package ru.zoom4ikdan4ik.core.runnables;
 
 import org.bukkit.plugin.Plugin;
-import ru.zoom4ikdan4ik.core.Core;
 import ru.zoom4ikdan4ik.core.interfaces.IBase;
 
 public class PluginsManagerRunnable implements Runnable, IBase {
 
     @Override
     public void run() {
-        for (Plugin plugin : Core.plugins.keySet())
+        for (Plugin plugin : corePlugin.plugins.keySet())
             if (configManager.getConfig().get("Modules." + plugin.getName()) == null)
                 configManager.getConfig().set("Modules." + plugin.getName(), true);
 

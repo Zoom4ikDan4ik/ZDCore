@@ -10,17 +10,17 @@ import java.util.Map;
 
 /**
  * Main class for ZDCore
- * */
+ */
 public class Core extends JavaPlugin implements ICore, IBase {
 
     /**
      * Record all of the plugins that work from ZDCore
-     * */
-    public static Map<Plugin, ICore> plugins = new HashMap<>();
+     */
+    public Map<Plugin, ICore> plugins = new HashMap<>();
 
     /**
      * Default enabling plugin
-     * */
+     */
     @Override
     public void onEnable() {
         this.registerPlugin(corePlugin, corePlugin);
@@ -32,7 +32,7 @@ public class Core extends JavaPlugin implements ICore, IBase {
 
     /**
      * Default disabling plugin
-     * */
+     */
     @Override
     public void onDisable() {
         pluginsManager.disablingPlugins();
@@ -44,7 +44,7 @@ public class Core extends JavaPlugin implements ICore, IBase {
     }
 
     @Override
-    public IMySQLManager getMySQLManager() {
+    public ISQLManager getSQLManager() {
         return mySQLManager;
     }
 
@@ -60,10 +60,17 @@ public class Core extends JavaPlugin implements ICore, IBase {
 
     /**
      * Registration of plugins, processing of their managers
-     * */
+     */
     public void registerPlugin(ICore manager, Plugin plugin) {
         if (!corePlugin.getName().equalsIgnoreCase(plugin.getName()))
             plugins.put(plugin, manager);
+
+        ICommandManager command = manager.getCommandManager();
+        if (command != null) {
+            loggerUtils.info(plugin, "Register commands...");
+
+            Bukkit.getPluginCommand(plugin.getName().toLowerCase()).setExecutor(command);
+        }
 
         IConfigManager config = manager.getConfigManager();
         if (config != null) {
@@ -73,11 +80,11 @@ public class Core extends JavaPlugin implements ICore, IBase {
             config.saveConfig();
         }
 
-        IMySQLManager mysql = manager.getMySQLManager();
-        if (mysql != null) {
+        ISQLManager sql = manager.getSQLManager();
+        if (sql != null) {
             loggerUtils.info(plugin, "Create tables...");
 
-            mysql.createTables();
+            sql.createTables();
         }
 
         ISchedulerManager scheduler = manager.getSchedulerManager();
@@ -85,13 +92,6 @@ public class Core extends JavaPlugin implements ICore, IBase {
             loggerUtils.info(plugin, "Add schedulers...");
 
             scheduler.addScheduler();
-        }
-
-        ICommandManager command = manager.getCommandManager();
-        if (command != null) {
-            loggerUtils.info(plugin, "Register commands...");
-
-            Bukkit.getPluginCommand(plugin.getName().toLowerCase()).setExecutor(command);
         }
     }
 }

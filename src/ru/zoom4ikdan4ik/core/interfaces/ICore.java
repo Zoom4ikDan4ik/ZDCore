@@ -11,7 +11,7 @@ public interface ICore extends IBase {
 
     IConfigManager getConfigManager();
 
-    IMySQLManager getMySQLManager();
+    ISQLManager getSQLManager();
 
     ISchedulerManager getSchedulerManager();
 

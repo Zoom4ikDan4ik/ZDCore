@@ -4,7 +4,6 @@ import org.bukkit.Bukkit;
 import org.bukkit.World;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.Plugin;
-import ru.zoom4ikdan4ik.core.Core;
 import ru.zoom4ikdan4ik.core.interfaces.IBase;
 import ru.zoom4ikdan4ik.core.interfaces.IConfigManager;
 
@@ -115,9 +114,9 @@ public class ConfigUtils implements IBase {
     }
 
     public void save(Plugin plugin) {
-        for (Plugin plugin1 : Core.plugins.keySet())
+        for (Plugin plugin1 : corePlugin.plugins.keySet())
             if (plugin1.getName().equals(plugin.getName())) {
-                IConfigManager iConfigManager = Core.plugins.get(plugin1).getConfigManager();
+                IConfigManager iConfigManager = corePlugin.plugins.get(plugin1).getConfigManager();
 
                 FileConfiguration cfg = iConfigManager.getConfig();
                 File file = iConfigManager.getFileConfig();

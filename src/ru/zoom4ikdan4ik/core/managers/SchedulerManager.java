@@ -3,7 +3,6 @@ package ru.zoom4ikdan4ik.core.managers;
 import org.bukkit.Bukkit;
 import org.bukkit.scheduler.BukkitScheduler;
 import ru.zoom4ikdan4ik.core.interfaces.ISchedulerManager;
-import ru.zoom4ikdan4ik.core.runnables.PluginsManagerRunnable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,7 +45,6 @@ public class SchedulerManager extends Thread implements ISchedulerManager {
 
     @Override
     public void addScheduler() {
-        this.schedulerManager.addScheduler(new PluginsManagerRunnable());
+        this.schedulerManager.addScheduler(pluginManagerRunnable);
     }
-
 }

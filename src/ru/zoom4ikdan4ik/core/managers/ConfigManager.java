@@ -6,8 +6,6 @@ import org.bukkit.configuration.file.YamlConfiguration;
 import ru.zoom4ikdan4ik.core.interfaces.IConfigManager;
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
 
 public class ConfigManager implements IConfigManager {
     private File file;
