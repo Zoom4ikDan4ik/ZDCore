@@ -17,30 +17,30 @@ public class CommandManager implements ICommandManager {
             switch (commander) {
                 case "reload":
                     if (sender.hasPermission("zdcore.reload")) {
-                        pluginsManager.reloadPlugins();
+                        this.pluginsManager.reloadPlugins();
 
-                        coreMethods.sendMessage(sender, "&aПлагины были перезагружены!");
-                    } else coreMethods.sendMessage(sender, MessagesEnum.NOT_HAVE_PERMISSIONS.getMessage());
+                        this.coreMethods.sendMessage(sender, "&aThe plugins was reloaded!");
+                    } else this.coreMethods.sendMessage(sender, MessagesEnum.NOT_HAVE_PERMISSIONS.getMessage());
                     break;
                 case "script":
                     if (args.length > 1) {
                         if (sender.hasPermission("zdcore.script")) {
                             try {
-                                coreMethods.useScripts(args[1]);
-                                coreMethods.sendMessage(sender, "&aЗапущено...");
+                                this.coreMethods.useScripts(args[1]);
+                                this.coreMethods.sendMessage(sender, "&aStarted...");
                             } catch (IOException e) {
-                                loggerUtils.info(corePlugin, e.getMessage());
+                                this.loggerUtils.info(this.corePlugin, e.getMessage());
 
-                                coreMethods.sendMessage(sender, "&cОшибка: " + e.getMessage());
+                                this.coreMethods.sendMessage(sender, "&cError: " + e.getMessage());
                             }
-                        } else coreMethods.sendMessage(sender, MessagesEnum.NOT_HAVE_PERMISSIONS.getMessage());
-                    } else coreMethods.sendMessage(sender, MessagesEnum.NUMBER_EXCEPTIONS.getMessage());
+                        } else this.coreMethods.sendMessage(sender, MessagesEnum.NOT_HAVE_PERMISSIONS.getMessage());
+                    } else this.coreMethods.sendMessage(sender, MessagesEnum.NUMBER_EXCEPTIONS.getMessage());
                     break;
                 default:
-                    coreMethods.sendMessage(sender, MessagesEnum.NOT_FOUND_PARAMETERS.getMessage());
+                    this.coreMethods.sendMessage(sender, MessagesEnum.NOT_FOUND_PARAMETERS.getMessage());
                     break;
             }
-        } else coreMethods.sendMessage(sender, MessagesEnum.NUMBER_EXCEPTIONS.getMessage());
+        } else this.coreMethods.sendMessage(sender, MessagesEnum.NUMBER_EXCEPTIONS.getMessage());
 
         return true;
     }

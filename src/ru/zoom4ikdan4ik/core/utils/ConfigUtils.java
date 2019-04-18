@@ -109,14 +109,14 @@ public class ConfigUtils implements IBase {
         try {
             cfg.save(file);
         } catch (IOException e) {
-            loggerUtils.info(plugin, e.getMessage());
+            this.loggerUtils.info(plugin, e.getMessage());
         }
     }
 
     public void save(Plugin plugin) {
-        for (Plugin plugin1 : corePlugin.plugins.keySet())
+        for (Plugin plugin1 : this.corePlugin.plugins.keySet())
             if (plugin1.getName().equals(plugin.getName())) {
-                IConfigManager iConfigManager = corePlugin.plugins.get(plugin1).getConfigManager();
+                IConfigManager iConfigManager = this.corePlugin.plugins.get(plugin1).getConfigManager();
 
                 FileConfiguration cfg = iConfigManager.getConfig();
                 File file = iConfigManager.getFileConfig();
@@ -124,7 +124,7 @@ public class ConfigUtils implements IBase {
                 try {
                     cfg.save(file);
                 } catch (IOException e) {
-                    loggerUtils.info(plugin, e.getMessage());
+                    this.loggerUtils.info(plugin, e.getMessage());
                 }
 
                 return;

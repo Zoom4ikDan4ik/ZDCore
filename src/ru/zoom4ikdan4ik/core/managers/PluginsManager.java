@@ -12,25 +12,26 @@ public class PluginsManager implements IPluginsManager {
     private Map<String, Boolean> modules = new HashMap<>();
 
     public void reloadPlugins() {
-        schedulerManager.clearScheduler();
+        this.schedulerManager.clearScheduler();
 
-        corePlugin.registerPlugin(corePlugin, corePlugin);
+        this.corePlugin.registerPlugin(this.corePlugin, this.corePlugin);
 
         this.checkingModules();
 
-        for (String key : modules.keySet()) {
-            disablePlugin(getPlugin(key));
-            enablePlugin(getPlugin(key));
+        for (String key : this.modules.keySet()) {
+            this.disablePlugin(getPlugin(key));
+
+            this.enablePlugin(getPlugin(key));
         }
     }
 
     public void disablingPlugins() {
-        for (String key : modules.keySet())
-            disablePlugin(getPlugin(key));
+        for (String key : this.modules.keySet())
+            this.disablePlugin(getPlugin(key));
     }
 
     public void checkingModules() {
-        Iterator<Map.Entry<String, Boolean>> it = modules.entrySet().iterator();
+        Iterator<Map.Entry<String, Boolean>> it = this.modules.entrySet().iterator();
         Map<String, Boolean> newMap = new HashMap<String, Boolean>();
 
         while (it.hasNext()) {
@@ -40,16 +41,16 @@ public class PluginsManager implements IPluginsManager {
                 if (key.getValue()) {
                     newMap.put(key.getKey(), key.getValue());
 
-                    loggerUtils.info(corePlugin, key.getKey() + " найден! =)");
+                    this.loggerUtils.info(this.corePlugin, key.getKey() + " found! =)");
                 } else {
-                    Bukkit.getScheduler().runTask(corePlugin, () -> this.disablePlugin(bukkitPluginManager.getPlugin(key.getKey())));
+                    Bukkit.getScheduler().runTask(this.corePlugin, () -> this.disablePlugin(this.bukkitPluginManager.getPlugin(key.getKey())));
 
-                    loggerUtils.info(corePlugin, key.getKey() + " найден и выключен! =|");
+                    this.loggerUtils.info(this.corePlugin, key.getKey() + " found and disabled! =|");
                 }
             } else {
                 it.remove();
 
-                loggerUtils.info(corePlugin, key.getKey() + " не найден! =(");
+                this.loggerUtils.info(this.corePlugin, key.getKey() + " not found! =(");
             }
         }
 
@@ -57,23 +58,23 @@ public class PluginsManager implements IPluginsManager {
     }
 
     public boolean isEnabledPlugin(String plugin) {
-        return bukkitPluginManager.isPluginEnabled(plugin);
+        return this.bukkitPluginManager.isPluginEnabled(plugin);
     }
 
     public boolean isEnabledPlugin(Plugin plugin) {
-        return bukkitPluginManager.isPluginEnabled(plugin);
+        return this.bukkitPluginManager.isPluginEnabled(plugin);
     }
 
     public Plugin getPlugin(String plugin) {
-        return bukkitPluginManager.getPlugin(plugin);
+        return this.bukkitPluginManager.getPlugin(plugin);
     }
 
     public void disablePlugin(Plugin plugin) {
-        bukkitPluginManager.disablePlugin(plugin);
+        this.bukkitPluginManager.disablePlugin(plugin);
     }
 
     public void enablePlugin(Plugin plugin) {
-        bukkitPluginManager.enablePlugin(plugin);
+        this.bukkitPluginManager.enablePlugin(plugin);
     }
 
     public void put(String key, boolean flag) {

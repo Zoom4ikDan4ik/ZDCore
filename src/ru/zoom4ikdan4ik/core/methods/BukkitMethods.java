@@ -40,7 +40,7 @@ public class BukkitMethods implements IBase {
     }
 
     public void broadcast(String str) {
-        Bukkit.broadcastMessage(coreMethods.color(str));
+        Bukkit.broadcastMessage(this.coreMethods.color(str));
     }
 
     public void restartServer() {

@@ -21,14 +21,14 @@ public class SchedulerManager extends Thread implements ISchedulerManager {
 
     @Override
     public void run() {
-        scheduler.scheduleSyncRepeatingTask(corePlugin, () -> {
-            for (Runnable runnable : runnables)
-                scheduler.runTask(corePlugin, runnable);
+        this.scheduler.scheduleSyncRepeatingTask(this.corePlugin, () -> {
+            for (Runnable runnable : this.runnables)
+                this.scheduler.runTask(this.corePlugin, runnable);
         }, 0L, 20L);
     }
 
     public void stopScheduler() {
-        this.scheduler.cancelTasks(corePlugin);
+        this.scheduler.cancelTasks(this.corePlugin);
     }
 
     public void clearScheduler() {
@@ -45,6 +45,6 @@ public class SchedulerManager extends Thread implements ISchedulerManager {
 
     @Override
     public void addScheduler() {
-        this.schedulerManager.addScheduler(pluginManagerRunnable);
+        this.schedulerManager.addScheduler(this.pluginManagerRunnable);
     }
 }

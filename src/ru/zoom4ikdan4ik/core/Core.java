@@ -1,6 +1,7 @@
 package ru.zoom4ikdan4ik.core;
 
 import org.bukkit.Bukkit;
+import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 import ru.zoom4ikdan4ik.core.interfaces.*;
@@ -23,11 +24,11 @@ public class Core extends JavaPlugin implements ICore, IBase {
      */
     @Override
     public void onEnable() {
-        this.registerPlugin(corePlugin, corePlugin);
+        this.registerPlugin(this.corePlugin, this.corePlugin);
 
-        loggerUtils.info(corePlugin, "Starting scheduler...");
+        this.loggerUtils.info(corePlugin, "Starting scheduler...");
 
-        schedulerManager.startScheduler();
+        this.schedulerManager.startScheduler();
     }
 
     /**
@@ -35,46 +36,42 @@ public class Core extends JavaPlugin implements ICore, IBase {
      */
     @Override
     public void onDisable() {
-        pluginsManager.disablingPlugins();
+        this.pluginsManager.disablingPlugins();
     }
 
     @Override
     public IConfigManager getConfigManager() {
-        return configManager;
+        return this.configManager;
     }
 
     @Override
     public ISQLManager getSQLManager() {
-        return mySQLManager;
+        return this.mySQLManager;
     }
 
     @Override
     public ISchedulerManager getSchedulerManager() {
-        return schedulerManager;
+        return this.schedulerManager;
     }
 
     @Override
     public ICommandManager getCommandManager() {
-        return commandManager;
+        return this.commandManager;
     }
 
     /**
      * Registration of plugins, processing of their managers
      */
     public void registerPlugin(ICore manager, Plugin plugin) {
-        if (!corePlugin.getName().equalsIgnoreCase(plugin.getName()))
-            plugins.put(plugin, manager);
-
-        ICommandManager command = manager.getCommandManager();
-        if (command != null) {
-            loggerUtils.info(plugin, "Register commands...");
-
-            Bukkit.getPluginCommand(plugin.getName().toLowerCase()).setExecutor(command);
-        }
+        if (!this.corePlugin.getName().equalsIgnoreCase(plugin.getName()))
+            this.plugins.put(plugin, manager);
 
         IConfigManager config = manager.getConfigManager();
         if (config != null) {
-            loggerUtils.info(plugin, "Loading configs...");
+            this.loggerUtils.info(plugin, "Loading configs...");
+
+            config.setFileConfig(this.coreMethods.createConfigYML(config.nameConfig(), plugin));
+            config.setConfig(YamlConfiguration.loadConfiguration(config.getFileConfig()));
 
             config.loadConfig();
             config.saveConfig();
@@ -82,16 +79,23 @@ public class Core extends JavaPlugin implements ICore, IBase {
 
         ISQLManager sql = manager.getSQLManager();
         if (sql != null) {
-            loggerUtils.info(plugin, "Create tables...");
+            this.loggerUtils.info(plugin, "Create tables...");
 
             sql.createTables();
         }
 
         ISchedulerManager scheduler = manager.getSchedulerManager();
         if (scheduler != null) {
-            loggerUtils.info(plugin, "Add schedulers...");
+            this.loggerUtils.info(plugin, "Add schedulers...");
 
             scheduler.addScheduler();
+        }
+
+        ICommandManager command = manager.getCommandManager();
+        if (command != null) {
+            this.loggerUtils.info(plugin, "Register commands...");
+
+            Bukkit.getPluginCommand(plugin.getName().toLowerCase()).setExecutor(command);
         }
     }
 }

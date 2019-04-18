@@ -25,7 +25,7 @@ public class MySQLManager extends SQLBase implements ISQLManager {
             if (this.isConnection(this.mysqlConnection))
                 return this.mysqlConnection;
         } catch (Exception error) {
-            loggerUtils.info(corePlugin, "[MySQL] " + error.getMessage());
+            this.loggerUtils.info(this.corePlugin, "[MySQL] " + error.getMessage());
         }
 
         return null;

@@ -8,18 +8,18 @@ public class PluginsManagerRunnable implements Runnable, IBase {
     @Override
     public void run() {
         for (Plugin plugin : corePlugin.plugins.keySet())
-            if (configManager.getConfig().get("Modules." + plugin.getName()) == null)
-                configManager.getConfig().set("Modules." + plugin.getName(), true);
+            if (this.configManager.getConfig().get("Modules." + plugin.getName()) == null)
+                this.configManager.getConfig().set("Modules." + plugin.getName(), true);
 
-        configManager.saveConfig();
+        this.configManager.saveConfig();
 
-        for (String key : configManager.getConfig().getConfigurationSection("Modules").getKeys(false))
-            pluginsManager.put(key, configManager.getConfig().getConfigurationSection("Modules").getBoolean(key));
+        for (String key : this.configManager.getConfig().getConfigurationSection("Modules").getKeys(false))
+            this.pluginsManager.put(key, this.configManager.getConfig().getConfigurationSection("Modules").getBoolean(key));
 
-        loggerUtils.info(corePlugin, "Checking addons...");
+        this.loggerUtils.info(this.corePlugin, "Checking addons...");
 
-        pluginsManager.checkingModules();
+        this.pluginsManager.checkingModules();
 
-        schedulerManager.removeScheduler(this);
+        this.schedulerManager.removeScheduler(this);
     }
 }

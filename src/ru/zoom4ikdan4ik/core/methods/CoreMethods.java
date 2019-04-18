@@ -19,7 +19,7 @@ public class CoreMethods implements IBase {
     }
 
     public String getPathServer() {
-        String[] path = corePlugin.getDataFolder().getAbsolutePath().replace("\\", "/").split("/");
+        String[] path = this.corePlugin.getDataFolder().getAbsolutePath().replace("\\", "/").split("/");
         String serverPath = "";
 
         for (String str : path)
@@ -33,11 +33,11 @@ public class CoreMethods implements IBase {
     }
 
     public World getMainWorld() {
-        return configManager.main_world;
+        return this.configManager.main_world;
     }
 
     public String getPathServer(String server) {
-        return this.getPathServer().replace(configManager.server, server);
+        return this.getPathServer().replace(this.configManager.server, server);
     }
 
     public void sendMessageQuery(CommandSender sender, String start) {
@@ -63,7 +63,7 @@ public class CoreMethods implements IBase {
     }
 
     public void useScripts(String script) throws IOException {
-        File file = new File(configManager.scripts_path + script);
+        File file = new File(this.configManager.scripts_path + script);
 
         if (!file.exists())
             throw new IOException("File not found!");
@@ -93,7 +93,7 @@ public class CoreMethods implements IBase {
 
                 fos.close();
             } catch (Exception error) {
-                loggerUtils.info(plugin, error.getMessage());
+                this.loggerUtils.info(plugin, error.getMessage());
             }
         }
 

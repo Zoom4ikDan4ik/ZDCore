@@ -11,11 +11,11 @@ import java.util.function.Function;
 public class SQLBase implements IBase {
     public boolean isConnection(Connection connection) throws SQLException {
         if (connection == null) {
-            loggerUtils.info(corePlugin, "Could not connect to the database");
+            this.loggerUtils.info(this.corePlugin, "Could not connect to the database");
 
             throw new SQLException();
         } else if (!connection.isValid(5)) {
-            loggerUtils.info(corePlugin, "Could not connect to the database.");
+            this.loggerUtils.info(this.corePlugin, "Could not connect to the database.");
 
             throw new SQLException();
         } else
@@ -26,9 +26,9 @@ public class SQLBase implements IBase {
         try (Statement statement = connection.createStatement()) {
             statement.executeUpdate(query);
         } catch (SQLException error) {
-            loggerUtils.info(corePlugin, "[executeUpdate] " + error.getMessage());
+            this.loggerUtils.info(this.corePlugin, "[executeUpdate] " + error.getMessage());
         } catch (NullPointerException error) {
-            loggerUtils.info(corePlugin, error.getMessage());
+            this.loggerUtils.info(this.corePlugin, error.getMessage());
         }
     }
 
@@ -36,9 +36,9 @@ public class SQLBase implements IBase {
         try (Statement statement = connection.createStatement()) {
             return func.apply(statement.executeQuery(query));
         } catch (SQLException error) {
-            loggerUtils.info(corePlugin, "[getResultSet] " + error.getMessage());
+            this.loggerUtils.info(this.corePlugin, "[getResultSet] " + error.getMessage());
         } catch (NullPointerException error) {
-            loggerUtils.info(corePlugin, error.getMessage());
+            this.loggerUtils.info(this.corePlugin, error.getMessage());
         }
 
         return null;

@@ -13,7 +13,13 @@ public interface IConfigManager extends IBase {
 
     void saveConfig();
 
+    void setConfig(FileConfiguration config);
+
+    void setFileConfig(File file);
+
     FileConfiguration getConfig();
 
     File getFileConfig();
+
+    String nameConfig();
 }

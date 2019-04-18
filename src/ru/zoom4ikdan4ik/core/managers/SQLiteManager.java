@@ -25,7 +25,7 @@ public class SQLiteManager extends SQLBase implements ISQLManager {
             if (this.isConnection(this.sqliteConnection))
                 return this.sqliteConnection;
         } catch (Exception error) {
-            loggerUtils.info(corePlugin, "[SQLite] " + error.getMessage());
+            this.loggerUtils.info(this.corePlugin, "[SQLite] " + error.getMessage());
         }
 
         return null;
