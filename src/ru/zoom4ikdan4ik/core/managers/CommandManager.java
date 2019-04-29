@@ -6,8 +6,19 @@ import ru.zoom4ikdan4ik.core.enums.MessagesEnum;
 import ru.zoom4ikdan4ik.core.interfaces.ICommandManager;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class CommandManager implements ICommandManager {
+
+    @Override
+    public List<String> getCommands() {
+        List<String> commands = new ArrayList<String>();
+
+        commands.add("zdcore");
+
+        return commands;
+    }
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
