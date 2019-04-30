@@ -28,7 +28,9 @@ public class ConfigManager implements IConfigManager {
         this.mysql_database = this.configUtils.getString(this.config, "MySQL.database", "root");
         this.mysql_user = this.configUtils.getString(this.config, "MySQL.user", "root");
         this.mysql_password = this.configUtils.getString(this.config, "MySQL.password", "password");
+    }
 
+    public void setConnection() {
         this.mySQLManager.getConnection(this.mysql_host, this.mysql_port, this.mysql_database, this.mysql_user, this.mysql_password);
     }
 

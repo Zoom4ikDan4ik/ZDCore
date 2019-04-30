@@ -14,6 +14,10 @@ import java.io.InputStream;
 import java.util.List;
 
 public class CoreMethods implements IBase {
+    public long getSystemTime() {
+        return System.currentTimeMillis();
+    }
+
     public String color(String string) {
         return ChatColor.translateAlternateColorCodes('&', string);
     }
