@@ -2,7 +2,11 @@ package ru.zoom4ikdan4ik.core.managers;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
+import org.bukkit.command.ConsoleCommandSender;
+import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
 import ru.zoom4ikdan4ik.core.enums.MessagesEnum;
+import ru.zoom4ikdan4ik.core.enums.PermissionsEnum;
 import ru.zoom4ikdan4ik.core.interfaces.ICommandManager;
 
 import java.io.IOException;
@@ -27,15 +31,16 @@ public class CommandManager implements ICommandManager {
 
             switch (commander) {
                 case "reload":
-                    if (sender.hasPermission("zdcore.reload")) {
+                    if (sender.hasPermission(PermissionsEnum.RELOAD.getPermission())) {
                         this.pluginsManager.reloadPlugins();
 
                         this.coreMethods.sendMessage(sender, "&aThe plugins was reloaded!");
                     } else this.coreMethods.sendMessage(sender, MessagesEnum.NOT_HAVE_PERMISSIONS.getMessage());
+
                     break;
                 case "script":
                     if (args.length > 1) {
-                        if (sender.hasPermission("zdcore.script")) {
+                        if (sender.hasPermission(PermissionsEnum.SCRIPT.getPermission())) {
                             try {
                                 this.coreMethods.useScripts(args[1]);
                                 this.coreMethods.sendMessage(sender, "&aStarted...");
@@ -46,9 +51,31 @@ public class CommandManager implements ICommandManager {
                             }
                         } else this.coreMethods.sendMessage(sender, MessagesEnum.NOT_HAVE_PERMISSIONS.getMessage());
                     } else this.coreMethods.sendMessage(sender, MessagesEnum.NUMBER_EXCEPTIONS.getMessage());
+
+                    break;
+                case "unix":
+                    if (sender.hasPermission(PermissionsEnum.UNIX.getPermission()))
+                        this.coreMethods.sendMessage(sender, "&aUnix time: " + this.coreMethods.getUnixTime());
+
+                    break;
+                case "id":
+                    if (sender instanceof ConsoleCommandSender)
+                        this.coreMethods.sendMessage(sender, MessagesEnum.CONSOLE_SENDER.getMessage());
+                    else if (sender.hasPermission(PermissionsEnum.ID.getPermission())) {
+                        Player player = (Player) sender;
+                        ItemStack itemStack = player.getItemInHand();
+
+                        if (itemStack != null) {
+                            String id = itemStack.getType().toString();
+                            String data = String.valueOf(itemStack.getDurability());
+
+                            this.coreMethods.sendMessage(sender, "&a" + id + ":" + data);
+                        }
+                    }
                     break;
                 default:
                     this.coreMethods.sendMessage(sender, MessagesEnum.NOT_FOUND_PARAMETERS.getMessage());
+
                     break;
             }
         } else this.coreMethods.sendMessage(sender, MessagesEnum.NUMBER_EXCEPTIONS.getMessage());

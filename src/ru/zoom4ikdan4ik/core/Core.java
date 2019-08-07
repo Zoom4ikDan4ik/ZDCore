@@ -18,7 +18,7 @@ public class Core extends JavaPlugin implements ICore, IBase {
     /**
      * Record all of the plugins that work from ZDCore
      */
-    public Map<Plugin, ICore> plugins = new HashMap<>();
+    public Map<Plugin, ICore> plugins = new HashMap<Plugin, ICore>();
 
     /**
      * Default enabling plugin
@@ -71,8 +71,10 @@ public class Core extends JavaPlugin implements ICore, IBase {
         if (config != null) {
             this.loggerUtils.info(plugin, "Loading configs...");
 
-            config.setFileConfig(this.coreMethods.createConfigYML(config.nameConfig(), plugin));
-            config.setConfig(YamlConfiguration.loadConfiguration(config.getFileConfig()));
+            if (config.nameConfig() != null) {
+                config.setFileConfig(this.coreMethods.createConfigYML(config.nameConfig(), plugin));
+                config.setConfig(YamlConfiguration.loadConfiguration(config.getFileConfig()));
+            }
 
             config.loadConfig();
             config.saveConfig();

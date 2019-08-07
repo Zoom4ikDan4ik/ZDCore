@@ -18,6 +18,10 @@ public class CoreMethods implements IBase {
         return System.currentTimeMillis();
     }
 
+    public long getUnixTime() {
+        return this.getSystemTime() / 1000;
+    }
+
     public String color(String string) {
         return ChatColor.translateAlternateColorCodes('&', string);
     }
@@ -86,16 +90,16 @@ public class CoreMethods implements IBase {
             plugin.getDataFolder().mkdirs();
 
             try {
-                FileOutputStream fos = new FileOutputStream(file);
-                byte[] buff = new byte[65536];
+                FileOutputStream fileOutputStream = new FileOutputStream(file);
+                byte[] buffer = new byte[65536];
                 int n;
 
-                while ((n = resourceAsStream.read(buff)) > 0) {
-                    fos.write(buff, 0, n);
-                    fos.flush();
+                while ((n = resourceAsStream.read(buffer)) > 0) {
+                    fileOutputStream.write(buffer, 0, n);
+                    fileOutputStream.flush();
                 }
 
-                fos.close();
+                fileOutputStream.close();
             } catch (Exception error) {
                 this.loggerUtils.info(plugin, error.getMessage());
             }

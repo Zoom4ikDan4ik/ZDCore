@@ -6,7 +6,6 @@ import org.bukkit.World;
 import org.bukkit.entity.Player;
 import ru.zoom4ikdan4ik.core.interfaces.IBase;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class BukkitMethods implements IBase {
@@ -15,7 +14,7 @@ public class BukkitMethods implements IBase {
     }
 
     public Player searchPlayer(String player) {
-        for (Player players : this.getOnlinePlayers())
+        for (Player players : Bukkit.getOnlinePlayers())
             if (players.getName().toLowerCase().startsWith(player.toLowerCase()))
                 return players;
 
@@ -24,15 +23,6 @@ public class BukkitMethods implements IBase {
                 return players.getPlayer();
 
         return null;
-    }
-
-    public List<Player> getOnlinePlayers() {
-        List<Player> playerList = new ArrayList<>();
-
-        for (int i = 0; i < Bukkit.getOnlinePlayers().length; i++)
-            playerList.add(Bukkit.getOnlinePlayers()[i]);
-
-        return playerList;
     }
 
     public void useCommand(String command) {
