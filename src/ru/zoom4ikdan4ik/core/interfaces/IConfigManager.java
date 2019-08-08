@@ -8,7 +8,6 @@ import java.io.File;
  * Interface for structure of config
  */
 public interface IConfigManager extends IBase {
-
     void loadConfig();
 
     void saveConfig();
@@ -20,6 +19,4 @@ public interface IConfigManager extends IBase {
     FileConfiguration getConfig();
 
     File getFileConfig();
-
-    String nameConfig();
 }

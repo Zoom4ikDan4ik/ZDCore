@@ -71,11 +71,8 @@ public class Core extends JavaPlugin implements ICore, IBase {
         if (config != null) {
             this.loggerUtils.info(plugin, "Loading configs...");
 
-            if (config.nameConfig() != null) {
-                config.setFileConfig(this.coreMethods.createConfigYML(config.nameConfig(), plugin));
-                config.setConfig(YamlConfiguration.loadConfiguration(config.getFileConfig()));
-            }
-
+            config.setFileConfig(this.coreMethods.createConfigYML(plugin.getName(), plugin));
+            config.setConfig(YamlConfiguration.loadConfiguration(config.getFileConfig()));
             config.loadConfig();
             config.saveConfig();
         }

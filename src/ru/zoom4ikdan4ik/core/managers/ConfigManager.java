@@ -58,9 +58,4 @@ public class ConfigManager implements IConfigManager {
     public File getFileConfig() {
         return this.file;
     }
-
-    @Override
-    public String nameConfig() {
-        return "core";
-    }
 }

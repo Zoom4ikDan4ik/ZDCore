@@ -5,6 +5,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
+import ru.zoom4ikdan4ik.core.enums.CommandsEnum;
 import ru.zoom4ikdan4ik.core.enums.MessagesEnum;
 import ru.zoom4ikdan4ik.core.enums.PermissionsEnum;
 import ru.zoom4ikdan4ik.core.interfaces.ICommandManager;
@@ -28,9 +29,10 @@ public class CommandManager implements ICommandManager {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (args.length > 0) {
             String commander = args[0];
+            CommandsEnum commandsEnum = CommandsEnum.valueOf(commander.toUpperCase());
 
-            switch (commander) {
-                case "reload":
+            switch (commandsEnum) {
+                case RELOAD:
                     if (sender.hasPermission(PermissionsEnum.RELOAD.getPermission())) {
                         this.pluginsManager.reloadPlugins();
 
@@ -38,7 +40,7 @@ public class CommandManager implements ICommandManager {
                     } else this.coreMethods.sendMessage(sender, MessagesEnum.NOT_HAVE_PERMISSIONS.getMessage());
 
                     break;
-                case "script":
+                case SCRIPT:
                     if (args.length > 1) {
                         if (sender.hasPermission(PermissionsEnum.SCRIPT.getPermission())) {
                             try {
@@ -53,12 +55,12 @@ public class CommandManager implements ICommandManager {
                     } else this.coreMethods.sendMessage(sender, MessagesEnum.NUMBER_EXCEPTIONS.getMessage());
 
                     break;
-                case "unix":
+                case UNIX:
                     if (sender.hasPermission(PermissionsEnum.UNIX.getPermission()))
                         this.coreMethods.sendMessage(sender, "&aUnix time: " + this.coreMethods.getUnixTime());
 
                     break;
-                case "id":
+                case ID:
                     if (sender instanceof ConsoleCommandSender)
                         this.coreMethods.sendMessage(sender, MessagesEnum.CONSOLE_SENDER.getMessage());
                     else if (sender.hasPermission(PermissionsEnum.ID.getPermission())) {
