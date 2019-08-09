@@ -67,12 +67,7 @@ public class CommandManager implements ICommandManager {
                         Player player = (Player) sender;
                         ItemStack itemStack = player.getItemInHand();
 
-                        if (itemStack != null) {
-                            String id = itemStack.getType().toString();
-                            String data = String.valueOf(itemStack.getDurability());
-
-                            this.coreMethods.sendMessage(sender, "&a" + id + ":" + data);
-                        }
+                        this.coreMethods.sendMessage(sender, this.bukkitMethods.getItemStringID(itemStack));
                     }
                     break;
                 default:

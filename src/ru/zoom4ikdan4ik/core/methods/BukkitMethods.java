@@ -4,8 +4,10 @@ import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.World;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
 import ru.zoom4ikdan4ik.core.interfaces.IBase;
 
+import javax.annotation.Nonnull;
 import java.util.List;
 
 public class BukkitMethods implements IBase {
@@ -35,5 +37,13 @@ public class BukkitMethods implements IBase {
 
     public void restartServer() {
         Bukkit.getServer().shutdown();
+    }
+
+    public String getItemStringID(@Nonnull ItemStack itemStack) {
+        String id = itemStack.getType().toString();
+        String data = String.valueOf(itemStack.getDurability());
+        String size = String.valueOf(itemStack.getAmount());
+
+        return id + ":" + data + " " + size;
     }
 }
