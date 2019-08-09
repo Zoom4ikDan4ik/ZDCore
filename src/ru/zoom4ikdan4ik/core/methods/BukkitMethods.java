@@ -15,7 +15,7 @@ public class BukkitMethods implements IBase {
         return Bukkit.getWorlds();
     }
 
-    public Player searchPlayer(String player) {
+    public Player searchPlayer(@Nonnull String player) {
         for (Player players : Bukkit.getOnlinePlayers())
             if (players.getName().toLowerCase().startsWith(player.toLowerCase()))
                 return players;

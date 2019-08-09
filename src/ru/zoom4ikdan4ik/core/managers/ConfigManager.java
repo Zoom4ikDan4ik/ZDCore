@@ -2,11 +2,12 @@ package ru.zoom4ikdan4ik.core.managers;
 
 import org.bukkit.World;
 import org.bukkit.configuration.file.FileConfiguration;
+import ru.zoom4ikdan4ik.core.interfaces.IBase;
 import ru.zoom4ikdan4ik.core.interfaces.IConfigManager;
 
 import java.io.File;
 
-public class ConfigManager implements IConfigManager {
+public class ConfigManager implements IConfigManager, IBase {
     private File file;
     private FileConfiguration config;
 

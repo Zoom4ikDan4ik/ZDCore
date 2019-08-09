@@ -2,13 +2,14 @@ package ru.zoom4ikdan4ik.core.managers;
 
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.Plugin;
+import ru.zoom4ikdan4ik.core.interfaces.IBase;
 import ru.zoom4ikdan4ik.core.interfaces.IPluginsManager;
 
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
-public class PluginsManager implements IPluginsManager {
+public class PluginsManager implements IPluginsManager, IBase {
     private Map<String, Boolean> modules = new HashMap<>();
 
     public void reloadPlugins() {

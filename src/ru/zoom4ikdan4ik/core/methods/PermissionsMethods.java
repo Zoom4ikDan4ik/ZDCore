@@ -33,15 +33,17 @@ public class PermissionsMethods implements IBase {
         return user.getPrefix(world.getName());
     }
 
-    public void setSuffix(Player player, String suffix, String world) {
+    public void setSuffix(Player player, String suffix) {
         PermissionUser user = this.getPermissionUser(player);
+        World world = player.getWorld();
 
-        user.setSuffix(suffix, world);
+        user.setSuffix(suffix, world.getName());
     }
 
-    public void setPrefix(Player player, String prefix, String world) {
+    public void setPrefix(Player player, String prefix) {
         PermissionUser user = this.getPermissionUser(player);
+        World world = player.getWorld();
 
-        user.setPrefix(prefix, world);
+        user.setPrefix(prefix, world.getName());
     }
 }

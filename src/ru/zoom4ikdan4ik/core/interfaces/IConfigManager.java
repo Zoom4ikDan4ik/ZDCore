@@ -7,7 +7,7 @@ import java.io.File;
 /**
  * Interface for structure of config
  */
-public interface IConfigManager extends IBase {
+public interface IConfigManager {
     void loadConfig();
 
     void saveConfig();

@@ -8,13 +8,14 @@ import org.bukkit.inventory.ItemStack;
 import ru.zoom4ikdan4ik.core.enums.CommandsEnum;
 import ru.zoom4ikdan4ik.core.enums.MessagesEnum;
 import ru.zoom4ikdan4ik.core.enums.PermissionsEnum;
+import ru.zoom4ikdan4ik.core.interfaces.IBase;
 import ru.zoom4ikdan4ik.core.interfaces.ICommandManager;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CommandManager implements ICommandManager {
+public class CommandManager implements ICommandManager, IBase {
 
     @Override
     public List<String> getCommands() {
