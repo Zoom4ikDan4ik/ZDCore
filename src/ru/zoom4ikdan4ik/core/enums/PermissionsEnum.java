@@ -1,8 +1,9 @@
 package ru.zoom4ikdan4ik.core.enums;
 
 import ru.zoom4ikdan4ik.core.interfaces.IBase;
+import ru.zoom4ikdan4ik.core.interfaces.enums.IPermissions;
 
-public enum PermissionsEnum implements IBase {
+public enum PermissionsEnum implements IPermissions, IBase {
     RELOAD(configUtils.getString(configManager.getConfig(), "Permissions.Commands." + CommandsEnum.RELOAD.getCommand(), "zd.core." + CommandsEnum.RELOAD.getCommand().toLowerCase())),
     SCRIPT(configUtils.getString(configManager.getConfig(), "Permissions.Commands." + CommandsEnum.SCRIPT.getCommand(), "zd.core." + CommandsEnum.SCRIPT.getCommand().toLowerCase())),
     UNIX(configUtils.getString(configManager.getConfig(), "Permissions.Commands." + CommandsEnum.UNIX.getCommand(), "zd.core." + CommandsEnum.UNIX.getCommand().toLowerCase())),

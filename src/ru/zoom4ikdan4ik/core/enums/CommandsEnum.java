@@ -1,10 +1,13 @@
 package ru.zoom4ikdan4ik.core.enums;
 
-public enum CommandsEnum {
+import ru.zoom4ikdan4ik.core.interfaces.enums.ICommands;
+
+public enum CommandsEnum implements ICommands {
     RELOAD("RELOAD"),
     SCRIPT("SCRIPT"),
     UNIX("UNIX"),
     ID("ID");
+
     private final String command;
 
     CommandsEnum(String command) {

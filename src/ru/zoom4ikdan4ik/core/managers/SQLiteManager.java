@@ -10,6 +10,7 @@ import java.sql.ResultSet;
 import java.util.function.Function;
 
 public class SQLiteManager extends SQLBase implements ISQLManager {
+    //TODO Did it...
     private Connection sqliteConnection;
 
     @Override
