@@ -36,11 +36,6 @@ public class ConfigManager implements IConfigManager, IBase {
     }
 
     @Override
-    public void saveConfig() {
-        this.configUtils.save(this.corePlugin, this.getConfig(), this.getFileConfig());
-    }
-
-    @Override
     public void setConfig(FileConfiguration config) {
         this.config = config;
     }

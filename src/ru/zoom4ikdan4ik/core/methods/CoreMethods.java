@@ -7,6 +7,7 @@ import org.bukkit.plugin.Plugin;
 import ru.zoom4ikdan4ik.core.enums.MessagesEnum;
 import ru.zoom4ikdan4ik.core.interfaces.IBase;
 
+import javax.annotation.Nonnull;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -44,7 +45,7 @@ public class CoreMethods implements IBase {
         return this.configManager.main_world;
     }
 
-    public String getPathServer(String server) {
+    public String getPathServer(@Nonnull String server) {
         return this.getPathServer().replace(this.configManager.server, server);
     }
 
@@ -67,7 +68,7 @@ public class CoreMethods implements IBase {
     }
 
     public void sendMessage(CommandSender sender, String message) {
-        sender.sendMessage(color(message));
+        sender.sendMessage(this.color(message));
     }
 
     public void useScripts(String script) throws IOException {

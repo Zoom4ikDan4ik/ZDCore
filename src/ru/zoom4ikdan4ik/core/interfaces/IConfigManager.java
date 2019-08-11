@@ -10,13 +10,11 @@ import java.io.File;
 public interface IConfigManager {
     void loadConfig();
 
-    void saveConfig();
-
-    void setConfig(FileConfiguration config);
-
-    void setFileConfig(File file);
-
     FileConfiguration getConfig();
 
+    void setConfig(FileConfiguration config);
+    
     File getFileConfig();
+
+    void setFileConfig(File file);
 }

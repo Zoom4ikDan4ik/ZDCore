@@ -2,6 +2,7 @@ package ru.zoom4ikdan4ik.core.utils;
 
 import org.bukkit.Bukkit;
 import org.bukkit.World;
+import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.Plugin;
 import ru.zoom4ikdan4ik.core.interfaces.IBase;
@@ -92,6 +93,10 @@ public class ConfigUtils implements IBase {
         return Bukkit.getWorld(config.getString(path));
     }
 
+    public ConfigurationSection getConfigurationSection(FileConfiguration config, String path) {
+        return config.getConfigurationSection(path);
+    }
+
     public void setPath(FileConfiguration config, String path, Object option) {
         if (!this.isSet(config, path))
             config.set(path, option);
@@ -114,10 +119,10 @@ public class ConfigUtils implements IBase {
     }
 
     public void save(Plugin plugin) {
-        for (Plugin plugin1 : this.corePlugin.plugins.keySet())
-            if (plugin1.getName().equals(plugin.getName())) {
-                IConfigManager iConfigManager = this.corePlugin.plugins.get(plugin1).getConfigManager();
+        if (this.corePlugin.plugins.containsKey(plugin)) {
+            IConfigManager iConfigManager = this.corePlugin.plugins.get(plugin).getConfigManager();
 
+            if (iConfigManager != null) {
                 FileConfiguration cfg = iConfigManager.getConfig();
                 File file = iConfigManager.getFileConfig();
 
@@ -126,8 +131,7 @@ public class ConfigUtils implements IBase {
                 } catch (IOException e) {
                     this.loggerUtils.info(plugin, e.getMessage());
                 }
-
-                return;
             }
+        }
     }
 }

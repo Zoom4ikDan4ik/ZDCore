@@ -74,7 +74,8 @@ public class Core extends JavaPlugin implements ICore, IBase {
             config.setFileConfig(this.coreMethods.createConfigYML(plugin.getName(), plugin));
             config.setConfig(YamlConfiguration.loadConfiguration(config.getFileConfig()));
             config.loadConfig();
-            config.saveConfig();
+
+            this.configUtils.save(plugin);
         }
 
         ISQLManager sql = manager.getSQLManager();
