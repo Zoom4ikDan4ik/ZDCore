@@ -2,6 +2,8 @@ package ru.zoom4ikdan4ik.core.managers;
 
 import org.bukkit.World;
 import org.bukkit.configuration.file.FileConfiguration;
+import ru.zoom4ikdan4ik.core.enums.MessagesEnum;
+import ru.zoom4ikdan4ik.core.enums.PermissionsEnum;
 import ru.zoom4ikdan4ik.core.interfaces.IBase;
 import ru.zoom4ikdan4ik.core.interfaces.IConfigManager;
 
@@ -29,6 +31,9 @@ public class ConfigManager implements IConfigManager, IBase {
         this.mysql_database = this.configUtils.getString(this.config, "MySQL.database", "root");
         this.mysql_user = this.configUtils.getString(this.config, "MySQL.user", "root");
         this.mysql_password = this.configUtils.getString(this.config, "MySQL.password", "password");
+
+        MessagesEnum.values();
+        PermissionsEnum.values();
 
         this.configUtils.save(this.corePlugin, this.getConfig(), this.getFileConfig());
     }
