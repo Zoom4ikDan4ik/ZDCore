@@ -20,15 +20,14 @@ public class PluginsManager implements IPluginsManager, IBase {
         this.checkingModules();
 
         for (String key : this.modules.keySet()) {
-            this.disablePlugin(getPlugin(key));
-
-            this.enablePlugin(getPlugin(key));
+            this.bukkitPluginManager.disablePlugin(this.bukkitPluginManager.getPlugin(key));
+            this.bukkitPluginManager.enablePlugin(this.bukkitPluginManager.getPlugin(key));
         }
     }
 
     public void disablingPlugins() {
         for (String key : this.modules.keySet())
-            this.disablePlugin(getPlugin(key));
+            this.bukkitPluginManager.enablePlugin(this.bukkitPluginManager.getPlugin(key));
     }
 
     public void checkingModules() {
@@ -38,13 +37,13 @@ public class PluginsManager implements IPluginsManager, IBase {
         while (it.hasNext()) {
             final Map.Entry<String, Boolean> key = it.next();
 
-            if (this.getPlugin(key.getKey()) != null) {
+            if (this.bukkitPluginManager.getPlugin(key.getKey()) != null) {
                 if (key.getValue()) {
                     newMap.put(key.getKey(), key.getValue());
 
                     this.loggerUtils.info(this.corePlugin, key.getKey() + " found! =)");
                 } else {
-                    Bukkit.getScheduler().runTask(this.corePlugin, () -> this.disablePlugin(this.bukkitPluginManager.getPlugin(key.getKey())));
+                    Bukkit.getScheduler().runTask(this.corePlugin, () -> this.bukkitPluginManager.disablePlugin(this.bukkitPluginManager.getPlugin(key.getKey())));
 
                     this.loggerUtils.info(this.corePlugin, key.getKey() + " found and disabled! =|");
                 }
