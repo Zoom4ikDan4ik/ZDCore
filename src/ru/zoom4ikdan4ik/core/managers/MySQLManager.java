@@ -23,6 +23,8 @@ public class MySQLManager extends SQLBase implements ISQLManager {
                     "jdbc:mysql://" + host + ":" + port + "/" + database + "?useUnicode=true&characterEncoding=UTF-8",
                     user, password);
 
+            this.mysqlConnection.setAutoCommit(false);
+
             if (this.isConnection(this.mysqlConnection))
                 return this.mysqlConnection;
         } catch (Exception error) {
@@ -54,5 +56,13 @@ public class MySQLManager extends SQLBase implements ISQLManager {
         }
 
         return null;
+    }
+
+    public void commit() {
+        try {
+            this.mysqlConnection.commit();
+        } catch (SQLException error) {
+            this.loggerUtils.info(this.corePlugin, "[MySQL] " + error.getMessage());
+        }
     }
 }

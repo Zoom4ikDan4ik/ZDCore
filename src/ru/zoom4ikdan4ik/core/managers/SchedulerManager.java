@@ -25,6 +25,8 @@ public class SchedulerManager extends Thread implements ISchedulerManager, IBase
         this.scheduler.scheduleSyncRepeatingTask(this.corePlugin, () -> {
             for (Runnable runnable : this.runnables)
                 this.scheduler.runTask(this.corePlugin, runnable);
+
+            this.mySQLManager.commit();
         }, 0L, 20L);
     }
 
