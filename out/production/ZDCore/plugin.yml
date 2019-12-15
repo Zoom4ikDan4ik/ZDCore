@@ -1,8 +1,0 @@
-name: ZDCore
-main: ru.zoom4ikdan4ik.core.Core
-authors: [Zoom4ikDan4ik]
-version: 5.2 (16.12.2019)
-commands:
-  zdcore:
-      usage: /<command>
-      aliases: [zdc]
