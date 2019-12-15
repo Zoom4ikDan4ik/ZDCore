@@ -60,7 +60,7 @@ public class MySQLManager extends SQLBase implements ISQLManager {
 
     public void commit() {
         try {
-            if (this.mysqlConnection != null && !this.mysqlConnection.isClosed())
+            if (this.mysqlConnection == null || this.mysqlConnection != null && !this.mysqlConnection.isClosed())
                 this.mysqlConnection.commit();
         } catch (SQLException error) {
             this.loggerUtils.info(this.corePlugin, "[MySQL] " + error.getMessage());

@@ -7,7 +7,6 @@ import org.bukkit.plugin.java.JavaPlugin;
 import ru.zoom4ikdan4ik.core.interfaces.*;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -18,7 +17,7 @@ public class Core extends JavaPlugin implements ICore, IBase {
     /**
      * Record all of the plugins that work from ZDCore
      */
-    public Map<Plugin, ICore> plugins = new HashMap<Plugin, ICore>();
+    public Map<Plugin, ICore> plugins = new HashMap<>();
 
     /**
      * Default enabling plugin
@@ -96,9 +95,7 @@ public class Core extends JavaPlugin implements ICore, IBase {
         if (command != null) {
             this.loggerUtils.info(plugin, "Register commands...");
 
-            List<String> commands = command.getCommands();
-
-            for (String com : commands)
+            for (String com : command.getCommands())
                 Bukkit.getPluginCommand(com).setExecutor(command);
         }
     }
