@@ -37,7 +37,7 @@ public class MySQLManager extends SQLBase implements ISQLManager {
     public void executeUpdate(String query) {
         try {
             if (this.mysqlConnection == null || (this.mysqlConnection != null && this.mysqlConnection.isClosed()))
-                configManager.setConnection();
+                this.configManager.setConnection();
 
             super.executeUpdate(this.mysqlConnection, query);
         } catch (SQLException error) {
@@ -48,7 +48,7 @@ public class MySQLManager extends SQLBase implements ISQLManager {
     public <R> R executeResultSet(String query, Function<ResultSet, R> func) {
         try {
             if (this.mysqlConnection == null || (this.mysqlConnection != null && this.mysqlConnection.isClosed()))
-                configManager.setConnection();
+                this.configManager.setConnection();
 
             return super.executeResultSet(this.mysqlConnection, query, func);
         } catch (SQLException error) {
@@ -60,7 +60,7 @@ public class MySQLManager extends SQLBase implements ISQLManager {
 
     public void commit() {
         try {
-            if (this.mysqlConnection == null || this.mysqlConnection != null && !this.mysqlConnection.isClosed())
+            if (this.mysqlConnection != null && !this.mysqlConnection.isClosed())
                 this.mysqlConnection.commit();
         } catch (SQLException error) {
             this.loggerUtils.info(this.corePlugin, "[MySQL] " + error.getMessage());
