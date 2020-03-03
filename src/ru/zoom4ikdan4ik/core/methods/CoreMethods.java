@@ -6,6 +6,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.plugin.Plugin;
 import ru.zoom4ikdan4ik.core.enums.MessagesEnum;
 import ru.zoom4ikdan4ik.core.interfaces.IBase;
+import ru.zoom4ikdan4ik.core.interfaces.enums.IMessages;
 
 import javax.annotation.Nonnull;
 import java.io.File;
@@ -28,17 +29,12 @@ public class CoreMethods implements IBase {
     }
 
     public String getPathServer() {
-        String[] path = this.corePlugin.getDataFolder().getAbsolutePath().replace("\\", "/").split("/");
-        String serverPath = "";
+        File path = this.corePlugin.getDataFolder();
 
-        for (String str : path)
-            if (str.equalsIgnoreCase("plugins"))
-                break;
-            else
-                serverPath += "/" + str;
+        while (!path.getName().equals("plugins"))
+            path = path.getParentFile();
 
-
-        return serverPath;
+        return path.getAbsolutePath();
     }
 
     public World getMainWorld() {
@@ -59,12 +55,16 @@ public class CoreMethods implements IBase {
         this.sendMessage(sender, message);
     }
 
-    public String getQuery(String start, List<String> querysList) {
-        for (String querys : querysList)
-            if (querys.startsWith(start))
-                return querys;
+    public String getQuery(String start, List<String> queriesList) {
+        for (String queries : queriesList)
+            if (queries.startsWith(start))
+                return queries;
 
         return null;
+    }
+
+    public void sendMessage(CommandSender sender, IMessages message) {
+        this.sendMessage(sender, message.getMessage());
     }
 
     public void sendMessage(CommandSender sender, String message) {

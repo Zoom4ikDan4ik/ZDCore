@@ -113,8 +113,8 @@ public class ConfigUtils implements IBase {
     public void save(Plugin plugin, FileConfiguration cfg, File file) {
         try {
             cfg.save(file);
-        } catch (IOException e) {
-            this.loggerUtils.info(plugin, e.getMessage());
+        } catch (IOException error) {
+            this.loggerUtils.info(plugin, error.getMessage());
         }
     }
 
@@ -128,8 +128,8 @@ public class ConfigUtils implements IBase {
 
                 try {
                     cfg.save(file);
-                } catch (IOException e) {
-                    this.loggerUtils.info(plugin, e.getMessage());
+                } catch (IOException error) {
+                    this.loggerUtils.info(plugin, error.getMessage());
                 }
             }
         }

@@ -7,10 +7,10 @@ import java.util.logging.Logger;
 public class LoggerUtils {
     private final Logger log = Logger.getLogger("Minecraft");
 
-    public void info(Plugin plugin, String msg, Object... args) {
+    public void info(Plugin plugin, String message, Object... args) {
         for (Object object : args)
-            msg = msg.replaceFirst("%%", (String) object);
+            message = message.replaceFirst("%%", String.valueOf(object));
 
-        this.log.info("[" + plugin.getName() + "]" + " " + msg);
+        this.log.info("[" + plugin.getName() + "]" + " " + message);
     }
 }

@@ -1,6 +1,5 @@
 package ru.zoom4ikdan4ik.core.managers;
 
-import org.bukkit.Bukkit;
 import org.bukkit.scheduler.BukkitScheduler;
 import ru.zoom4ikdan4ik.core.interfaces.IBase;
 import ru.zoom4ikdan4ik.core.interfaces.ISchedulerManager;
@@ -9,16 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SchedulerManager extends Thread implements ISchedulerManager, IBase {
-    private BukkitScheduler scheduler = Bukkit.getServer().getScheduler();
+    private BukkitScheduler scheduler = this.bukkitMethods.getBukkitServer().getScheduler();
     private List<Runnable> runnables = new ArrayList<>();
-
-    public void startScheduler() {
-        if (this.isAlive())
-            return;
-
-        this.setName("ZDCore scheduler thread");
-        this.run();
-    }
 
     @Override
     public void run() {
@@ -28,6 +19,14 @@ public class SchedulerManager extends Thread implements ISchedulerManager, IBase
 
             this.mySQLManager.commit();
         }, 0L, 20L);
+    }
+
+    public void startScheduler() {
+        if (this.isAlive())
+            return;
+
+        this.setName("ZDCore scheduler thread");
+        this.run();
     }
 
     public void stopScheduler() {

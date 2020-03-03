@@ -2,6 +2,7 @@ package ru.zoom4ikdan4ik.core.methods;
 
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
+import org.bukkit.Server;
 import org.bukkit.World;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
@@ -27,12 +28,16 @@ public class BukkitMethods implements IBase {
         return null;
     }
 
+    public Server getBukkitServer() {
+        return Bukkit.getServer();
+    }
+
     public void useCommand(String command) {
         Bukkit.dispatchCommand(Bukkit.getConsoleSender(), command);
     }
 
-    public void broadcast(String str) {
-        Bukkit.broadcastMessage(this.coreMethods.color(str));
+    public void broadcast(String broadcast) {
+        Bukkit.broadcastMessage(this.coreMethods.color(broadcast));
     }
 
     public void restartServer() {

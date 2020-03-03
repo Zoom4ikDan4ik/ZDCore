@@ -1,6 +1,7 @@
 package ru.zoom4ikdan4ik.core;
 
 import org.bukkit.Bukkit;
+import org.bukkit.command.PluginCommand;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -95,8 +96,14 @@ public class Core extends JavaPlugin implements ICore, IBase {
         if (command != null) {
             this.loggerUtils.info(plugin, "Register commands...");
 
-            for (String com : command.getCommands())
-                Bukkit.getPluginCommand(com).setExecutor(command);
+            for (String com : command.getCommands()) {
+                PluginCommand pluginCommand = Bukkit.getPluginCommand(com);
+
+                if (pluginCommand.isRegistered())
+                    this.loggerUtils.info(plugin, "Command %% was registered by %% plugin", com, pluginCommand.getPlugin().getName());
+                else
+                    Bukkit.getPluginCommand(com).setExecutor(command);
+            }
         }
     }
 }

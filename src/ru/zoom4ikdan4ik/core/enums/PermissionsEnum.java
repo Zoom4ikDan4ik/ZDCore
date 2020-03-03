@@ -1,5 +1,6 @@
 package ru.zoom4ikdan4ik.core.enums;
 
+import org.bukkit.command.CommandSender;
 import ru.zoom4ikdan4ik.core.interfaces.IBase;
 import ru.zoom4ikdan4ik.core.interfaces.enums.IPermissions;
 
@@ -15,7 +16,13 @@ public enum PermissionsEnum implements IPermissions, IBase {
         this.permission = permission;
     }
 
+    @Override
     public String getPermission() {
         return this.permission;
+    }
+
+    @Override
+    public boolean hasPermission(CommandSender commandSender) {
+        return commandSender.hasPermission(this.permission);
     }
 }

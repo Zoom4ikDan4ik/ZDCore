@@ -20,8 +20,10 @@ public class PluginsManager implements IPluginsManager, IBase {
         this.checkingModules();
 
         for (String key : this.modules.keySet()) {
-            this.bukkitPluginManager.disablePlugin(this.bukkitPluginManager.getPlugin(key));
-            this.bukkitPluginManager.enablePlugin(this.bukkitPluginManager.getPlugin(key));
+            Plugin plugin = this.bukkitPluginManager.getPlugin(key);
+
+            this.bukkitPluginManager.disablePlugin(plugin);
+            this.bukkitPluginManager.enablePlugin(plugin);
         }
     }
 
@@ -31,50 +33,33 @@ public class PluginsManager implements IPluginsManager, IBase {
     }
 
     public void checkingModules() {
-        Iterator<Map.Entry<String, Boolean>> it = this.modules.entrySet().iterator();
+        Iterator<Map.Entry<String, Boolean>> iterator = this.modules.entrySet().iterator();
         Map<String, Boolean> newMap = new HashMap<String, Boolean>();
 
-        while (it.hasNext()) {
-            final Map.Entry<String, Boolean> key = it.next();
+        while (iterator.hasNext()) {
+            final Map.Entry<String, Boolean> key = iterator.next();
 
-            if (this.bukkitPluginManager.getPlugin(key.getKey()) != null) {
-                if (key.getValue()) {
-                    newMap.put(key.getKey(), key.getValue());
+            final Plugin plugin = this.bukkitPluginManager.getPlugin(key.getKey());
+            final boolean isEnabled = key.getValue();
 
-                    this.loggerUtils.info(this.corePlugin, key.getKey() + " found! =)");
+            if (plugin != null) {
+                if (isEnabled) {
+                    newMap.put(plugin.getName(), true);
+
+                    this.loggerUtils.info(this.corePlugin, "%% found! =)", plugin.getName());
                 } else {
-                    Bukkit.getScheduler().runTask(this.corePlugin, () -> this.bukkitPluginManager.disablePlugin(this.bukkitPluginManager.getPlugin(key.getKey())));
+                    Bukkit.getScheduler().runTask(this.corePlugin, () -> this.bukkitPluginManager.disablePlugin(plugin));
 
-                    this.loggerUtils.info(this.corePlugin, key.getKey() + " found and disabled! =|");
+                    this.loggerUtils.info(this.corePlugin, "%% found and disabled! =|", plugin.getName());
                 }
             } else {
-                it.remove();
+                iterator.remove();
 
-                this.loggerUtils.info(this.corePlugin, key.getKey() + " not found! =(");
+                this.loggerUtils.info(this.corePlugin, "%% not found! =(", plugin.getName());
             }
         }
 
         this.modules = newMap;
-    }
-
-    public boolean isEnabledPlugin(String plugin) {
-        return this.bukkitPluginManager.isPluginEnabled(plugin);
-    }
-
-    public boolean isEnabledPlugin(Plugin plugin) {
-        return this.bukkitPluginManager.isPluginEnabled(plugin);
-    }
-
-    public Plugin getPlugin(String plugin) {
-        return this.bukkitPluginManager.getPlugin(plugin);
-    }
-
-    public void disablePlugin(Plugin plugin) {
-        this.bukkitPluginManager.disablePlugin(plugin);
-    }
-
-    public void enablePlugin(Plugin plugin) {
-        this.bukkitPluginManager.enablePlugin(plugin);
     }
 
     public void put(String key, boolean flag) {

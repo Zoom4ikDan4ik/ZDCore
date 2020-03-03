@@ -1,5 +1,6 @@
 package ru.zoom4ikdan4ik.core.runnables;
 
+import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.plugin.Plugin;
 import ru.zoom4ikdan4ik.core.interfaces.IBase;
 
@@ -13,11 +14,12 @@ public class PluginsManagerRunnable implements Runnable, IBase {
 
         this.configUtils.save(this.corePlugin);
 
-        if (this.configUtils.getConfigurationSection(this.configManager.getConfig(), "Modules") != null)
-            for (String key : this.configUtils.getConfigurationSection(this.configManager.getConfig(), "Modules").getKeys(false))
-                this.pluginsManager.put(key, this.configUtils.getConfigurationSection(this.configManager.getConfig(), "Modules").getBoolean(key));
+        ConfigurationSection modules = this.configUtils.getConfigurationSection(this.configManager.getConfig(), "Modules");
+        if (modules != null)
+            for (String key : modules.getKeys(false))
+                this.pluginsManager.put(key, modules.getBoolean(key));
 
-        this.loggerUtils.info(this.corePlugin, "Checking addons...");
+        this.loggerUtils.info(this.corePlugin, "Checking modules...");
 
         this.pluginsManager.checkingModules();
 
