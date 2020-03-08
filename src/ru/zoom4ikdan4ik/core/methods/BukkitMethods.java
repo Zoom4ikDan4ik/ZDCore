@@ -2,7 +2,6 @@ package ru.zoom4ikdan4ik.core.methods;
 
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
-import org.bukkit.Server;
 import org.bukkit.World;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
@@ -26,10 +25,6 @@ public class BukkitMethods implements IBase {
                 return players.getPlayer();
 
         return null;
-    }
-
-    public Server getBukkitServer() {
-        return Bukkit.getServer();
     }
 
     public void useCommand(String command) {
