@@ -99,10 +99,12 @@ public class Core extends JavaPlugin implements ICore, IBase {
             for (String com : command.getCommands()) {
                 PluginCommand pluginCommand = Bukkit.getPluginCommand(com);
 
-                if (pluginCommand.isRegistered())
+                if (pluginCommand.isRegistered()) {
                     this.loggerUtils.info(plugin, "Command %% was registered by %% plugin", com, pluginCommand.getPlugin().getName());
-                else
+
                     Bukkit.getPluginCommand(com).setExecutor(command);
+                } else
+                    this.loggerUtils.info(plugin, "Command %% can't be register by %% plugin", com, pluginCommand.getPlugin().getName());
             }
         }
     }
