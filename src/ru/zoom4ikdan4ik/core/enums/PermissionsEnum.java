@@ -1,16 +1,16 @@
 package ru.zoom4ikdan4ik.core.enums;
 
 import org.bukkit.command.CommandSender;
+import ru.zoom4ikdan4ik.core.api.interfaces.enums.IPermissions;
 import ru.zoom4ikdan4ik.core.interfaces.IBase;
-import ru.zoom4ikdan4ik.core.interfaces.enums.IPermissions;
 
 public enum PermissionsEnum implements IPermissions, IBase {
-    RELOAD(configUtils.getString(configManager.getConfig(), "Permissions.Commands." + CommandsEnum.RELOAD.getCommand(), "zd.core." + CommandsEnum.RELOAD.getCommand().toLowerCase())),
-    SCRIPT(configUtils.getString(configManager.getConfig(), "Permissions.Commands." + CommandsEnum.SCRIPT.getCommand(), "zd.core." + CommandsEnum.SCRIPT.getCommand().toLowerCase())),
-    UNIX(configUtils.getString(configManager.getConfig(), "Permissions.Commands." + CommandsEnum.UNIX.getCommand(), "zd.core." + CommandsEnum.UNIX.getCommand().toLowerCase())),
-    ID(configUtils.getString(configManager.getConfig(), "Permissions.Commands." + CommandsEnum.ID.getCommand(), "zd.core." + CommandsEnum.ID.getCommand().toLowerCase()));
+    RELOAD("zd.core." + CommandsEnum.RELOAD.getSubCommand().toLowerCase()),
+    SCRIPT("zd.core." + CommandsEnum.SCRIPT.getSubCommand().toLowerCase()),
+    UNIX("zd.core." + CommandsEnum.UNIX.getSubCommand().toLowerCase()),
+    ID("zd.core." + CommandsEnum.ID.getSubCommand().toLowerCase());
 
-    private final String permission;
+    private String permission;
 
     PermissionsEnum(String permission) {
         this.permission = permission;
@@ -19,6 +19,11 @@ public enum PermissionsEnum implements IPermissions, IBase {
     @Override
     public String getPermission() {
         return this.permission;
+    }
+
+    @Override
+    public void setPermission(String permission) {
+        this.permission = permission;
     }
 
     @Override

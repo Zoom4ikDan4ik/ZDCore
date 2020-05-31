@@ -2,20 +2,20 @@ package ru.zoom4ikdan4ik.core.managers;
 
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.Plugin;
+import ru.zoom4ikdan4ik.core.api.RegistrationAPI;
 import ru.zoom4ikdan4ik.core.interfaces.IBase;
-import ru.zoom4ikdan4ik.core.interfaces.IPluginsManager;
 
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
-public class PluginsManager implements IPluginsManager, IBase {
+public class PluginsManager implements IBase {
     private Map<String, Boolean> modules = new HashMap<>();
 
     public void reloadPlugins() {
         this.schedulerManager.clearScheduler();
 
-        this.corePlugin.registerPlugin(this.corePlugin, this.corePlugin);
+        RegistrationAPI.registerPlugin(this.corePlugin, this.corePlugin);
 
         this.checkingModules();
 

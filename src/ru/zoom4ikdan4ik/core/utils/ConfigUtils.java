@@ -5,12 +5,15 @@ import org.bukkit.World;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.Plugin;
+import ru.zoom4ikdan4ik.core.api.RegistrationAPI;
+import ru.zoom4ikdan4ik.core.api.interfaces.ICore;
 import ru.zoom4ikdan4ik.core.interfaces.IBase;
 import ru.zoom4ikdan4ik.core.interfaces.IConfigManager;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 
 public class ConfigUtils implements IBase {
     public String getString(FileConfiguration config, String path) {
@@ -119,8 +122,10 @@ public class ConfigUtils implements IBase {
     }
 
     public void save(Plugin plugin) {
-        if (this.corePlugin.plugins.containsKey(plugin)) {
-            IConfigManager iConfigManager = this.corePlugin.plugins.get(plugin).getConfigManager();
+        Map<Plugin, ICore> pluginICoreMap = RegistrationAPI.getPlugins();
+
+        if (pluginICoreMap.containsKey(plugin)) {
+            IConfigManager iConfigManager = pluginICoreMap.get(plugin).getConfigManager();
 
             if (iConfigManager != null) {
                 FileConfiguration cfg = iConfigManager.getConfig();

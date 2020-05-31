@@ -13,8 +13,10 @@ public interface IConfigManager {
     FileConfiguration getConfig();
 
     void setConfig(FileConfiguration config);
-    
+
     File getFileConfig();
 
     void setFileConfig(File file);
+
+    void save();
 }

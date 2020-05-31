@@ -1,7 +1,7 @@
 package ru.zoom4ikdan4ik.core.managers;
 
-import ru.zoom4ikdan4ik.core.interfaces.ISQLManager;
-import ru.zoom4ikdan4ik.core.managers.base.SQLBase;
+import ru.zoom4ikdan4ik.core.api.interfaces.ISQLManager;
+import ru.zoom4ikdan4ik.core.api.managers.AbstractSQLManager;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -9,7 +9,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.function.Function;
 
-public class MySQLManager extends SQLBase implements ISQLManager {
+public class MySQLManager extends AbstractSQLManager implements ISQLManager {
     private Connection mysqlConnection;
 
     @Override

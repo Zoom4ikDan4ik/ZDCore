@@ -2,15 +2,15 @@ package ru.zoom4ikdan4ik.core.managers;
 
 import org.bukkit.Bukkit;
 import org.bukkit.scheduler.BukkitScheduler;
+import ru.zoom4ikdan4ik.core.api.interfaces.ISchedulerManager;
 import ru.zoom4ikdan4ik.core.interfaces.IBase;
-import ru.zoom4ikdan4ik.core.interfaces.ISchedulerManager;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class SchedulerManager extends Thread implements ISchedulerManager, IBase {
-    private BukkitScheduler scheduler = Bukkit.getServer().getScheduler();
-    private List<Runnable> runnables = new ArrayList<>();
+    private final BukkitScheduler scheduler = Bukkit.getServer().getScheduler();
+    private final List<Runnable> runnables = new ArrayList<>();
 
     @Override
     public void run() {
