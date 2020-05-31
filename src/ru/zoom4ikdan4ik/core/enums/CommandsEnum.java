@@ -8,10 +8,10 @@ import ru.zoom4ikdan4ik.core.commands.SubCommandScript;
 import ru.zoom4ikdan4ik.core.commands.SubCommandUnix;
 
 public enum CommandsEnum implements ICommands {
-    RELOAD("RELOAD", new SubCommandReload()),
-    SCRIPT("SCRIPT", new SubCommandScript()),
-    UNIX("UNIX", new SubCommandUnix()),
-    ID("ID", new SubCommandID());
+    RELOAD("reload", new SubCommandReload()),
+    SCRIPT("script", new SubCommandScript()),
+    UNIX("unix", new SubCommandUnix()),
+    ID("id", new SubCommandID());
 
     private final String command;
     private final ISubCommandManager subCommandManager;
@@ -19,6 +19,11 @@ public enum CommandsEnum implements ICommands {
     CommandsEnum(String command, ISubCommandManager subCommandManager) {
         this.command = command;
         this.subCommandManager = subCommandManager;
+    }
+
+    @Override
+    public String getName() {
+        return this.name().toLowerCase();
     }
 
     @Override

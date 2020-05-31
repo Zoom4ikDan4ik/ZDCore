@@ -16,6 +16,11 @@ public enum MessagesEnum implements IMessages, IBase {
     }
 
     @Override
+    public String getName() {
+        return this.name().toLowerCase();
+    }
+
+    @Override
     public String getMessage() {
         return this.message;
     }

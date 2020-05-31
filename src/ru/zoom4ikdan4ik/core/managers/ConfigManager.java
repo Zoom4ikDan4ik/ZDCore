@@ -7,12 +7,10 @@ import ru.zoom4ikdan4ik.core.enums.MessagesEnum;
 import ru.zoom4ikdan4ik.core.enums.PermissionsEnum;
 
 public class ConfigManager extends AbstractConfigManager {
+    public String server, scripts_path;
+    public World main_world;
     private String mysql_host, mysql_database, mysql_user, mysql_password;
     private int mysql_port;
-
-    public String server, scripts_path;
-
-    public World main_world;
 
     public ConfigManager(ICore plugin) {
         super(plugin);
@@ -30,17 +28,8 @@ public class ConfigManager extends AbstractConfigManager {
         this.mysql_user = this.getString("MySQL.user", "root");
         this.mysql_password = this.getString("MySQL.password", "password");
 
-        for (MessagesEnum messagesEnum : MessagesEnum.values()) {
-            this.registerMessage(messagesEnum.name(), messagesEnum.getMessage());
-
-            messagesEnum.setMessage(this.getMessage(messagesEnum.name()));
-        }
-
-        for (PermissionsEnum permissionsEnum : PermissionsEnum.values()) {
-            this.registerPermission(permissionsEnum.name(), permissionsEnum.getPermission());
-
-            permissionsEnum.setPermission(this.getPermssion(permissionsEnum.name()));
-        }
+        this.registerMessages(MessagesEnum.values());
+        this.registerPermissions(PermissionsEnum.values());
     }
 
     public void setConnection() {

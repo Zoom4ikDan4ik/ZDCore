@@ -17,6 +17,11 @@ public enum PermissionsEnum implements IPermissions, IBase {
     }
 
     @Override
+    public String getName() {
+        return this.name().toLowerCase();
+    }
+
+    @Override
     public String getPermission() {
         return this.permission;
     }

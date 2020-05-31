@@ -6,6 +6,10 @@ import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.Plugin;
 import ru.zoom4ikdan4ik.core.api.interfaces.ICore;
+import ru.zoom4ikdan4ik.core.api.interfaces.enums.ICommands;
+import ru.zoom4ikdan4ik.core.api.interfaces.enums.IMessages;
+import ru.zoom4ikdan4ik.core.api.interfaces.enums.IPermissions;
+import ru.zoom4ikdan4ik.core.api.interfaces.enums.ISQLs;
 import ru.zoom4ikdan4ik.core.interfaces.IBase;
 import ru.zoom4ikdan4ik.core.interfaces.IConfigManager;
 
@@ -45,6 +49,42 @@ public abstract class AbstractConfigManager implements IConfigManager, IBase {
         } catch (IOException error) {
             this.loggerUtils.info((Plugin) this.plugin, error.getMessage());
         }
+    }
+
+    public final void registerMessages(Object[] objects) {
+        for (Object object : objects)
+            if (object instanceof IMessages) {
+                IMessages messages = (IMessages) object;
+
+                this.registerMessage(messages.getName(), messages.getMessage());
+            }
+    }
+
+    public final void registerCommands(Object[] objects) {
+        for (Object object : objects)
+            if (object instanceof ICommands) {
+                ICommands commands = (ICommands) object;
+
+                this.registerMessage(commands.getName(), commands.getSubCommand());
+            }
+    }
+
+    public final void registerPermissions(Object[] objects) {
+        for (Object object : objects)
+            if (object instanceof IPermissions) {
+                IPermissions permissions = (IPermissions) object;
+
+                this.registerPermission(permissions.getName(), permissions.getPermission());
+            }
+    }
+
+    public final void registerQueries(Object[] objects) {
+        for (Object object : objects)
+            if (object instanceof ISQLs) {
+                ISQLs sqLs = (ISQLs) object;
+
+                this.registerPermission(sqLs.getName(), sqLs.getSQL());
+            }
     }
 
     public final void registerMessage(String path, String message) {
