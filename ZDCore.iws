@@ -2,186 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="657eed47-b0b7-42c3-a634-bea3f30ad946" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/ZDCore.ipr" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/api/interfaces/ISubCommandManager.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/api/interfaces/enums/IPermissions.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/api/interfaces/enums/package-frame.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/api/interfaces/package-frame.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/api/managers/AbstractCommandManager.SubCommand.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/api/managers/AbstractCommandManager.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/api/managers/AbstractConfigManager.CategoriesEnum.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/api/managers/AbstractConfigManager.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/api/managers/package-frame.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/api/managers/package-tree.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/api/methods/BukkitMethods.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/api/methods/package-frame.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/api/package-frame.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/commands/SubCommandID.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/commands/SubCommandReload.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/commands/SubCommandScript.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/commands/package-frame.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/commands/package-tree.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/api/RegistrationAPI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/api/interfaces/ISQLManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/api/interfaces/ISubCommandManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/api/interfaces/enums/ICommands.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/api/managers/AbstractCommandManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/api/managers/AbstractConfigManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/commands/SubCommandID.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/commands/SubCommandReload.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/commands/SubCommandScript.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/commands/SubCommandUnix.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/ZDCore.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/craftbukkit.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ZDCore.jar" beforeDir="false" afterPath="$PROJECT_DIR$/ZDCore.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/allclasses-frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/allclasses-frame.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/allclasses-noframe.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/allclasses-noframe.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/constant-values.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/constant-values.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/deprecated-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/deprecated-list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/help-doc.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/help-doc.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-1.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index-files/index-1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-10.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index-files/index-10.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-11.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index-files/index-11.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-12.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index-files/index-12.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-13.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index-files/index-13.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-14.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index-files/index-14.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-15.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index-files/index-15.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-16.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index-files/index-16.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-2.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index-files/index-2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-3.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index-files/index-3.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-4.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index-files/index-4.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-5.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index-files/index-5.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-6.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index-files/index-6.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-7.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index-files/index-7.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-8.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index-files/index-8.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-9.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index-files/index-9.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/overview-frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/overview-frame.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/overview-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/overview-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/overview-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/overview-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/package-list" beforeDir="false" afterPath="$PROJECT_DIR$/docs/package-list" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/Core.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/Core.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/class-use/Core.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/enums/CommandsEnum.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/enums/CommandsEnum.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/enums/MessagesEnum.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/enums/MessagesEnum.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/enums/PermissionsEnum.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/enums/PermissionsEnum.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/enums/class-use/CommandsEnum.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/enums/class-use/MessagesEnum.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/enums/class-use/PermissionsEnum.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/enums/package-frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/enums/package-frame.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/enums/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/enums/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/enums/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/enums/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/enums/package-use.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/interfaces/IBase.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/interfaces/IBase.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/interfaces/ICommandManager.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/interfaces/ICommandManager.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/interfaces/IConfigManager.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/interfaces/IConfigManager.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/interfaces/ICore.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/api/interfaces/ICore.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/interfaces/IPluginsManager.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/interfaces/ISQLManager.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/api/interfaces/enums/ICommands.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/interfaces/ISchedulerManager.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/api/interfaces/enums/IMessages.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/interfaces/class-use/IBase.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/interfaces/class-use/ICommandManager.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/interfaces/class-use/IConfigManager.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/interfaces/class-use/ICore.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/interfaces/class-use/IPluginsManager.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/interfaces/class-use/ISQLManager.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/interfaces/class-use/ISchedulerManager.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/interfaces/enums/ICommands.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/api/interfaces/ISchedulerManager.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/interfaces/enums/IMessages.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/api/interfaces/ISQLManager.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/interfaces/enums/IPermissions.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/interfaces/enums/ISQLs.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/api/interfaces/enums/ISQLs.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/interfaces/enums/class-use/ICommands.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/interfaces/enums/class-use/IMessages.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/api/interfaces/enums/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/interfaces/enums/class-use/IPermissions.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/interfaces/enums/class-use/ISQLs.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/api/interfaces/enums/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/interfaces/enums/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/interfaces/enums/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/api/interfaces/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/interfaces/enums/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/api/interfaces/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/interfaces/enums/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/api/managers/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/interfaces/package-frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/interfaces/package-frame.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/interfaces/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/interfaces/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/interfaces/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/interfaces/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/interfaces/package-use.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/managers/CommandManager.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/managers/CommandManager.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/managers/ConfigManager.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/managers/ConfigManager.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/managers/MySQLManager.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/managers/MySQLManager.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/managers/PluginsManager.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/managers/PluginsManager.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/managers/SQLiteManager.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/commands/SubCommandUnix.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/managers/SchedulerManager.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/managers/SchedulerManager.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/managers/base/SQLBase.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/api/managers/AbstractSQLManager.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/managers/base/class-use/SQLBase.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/managers/base/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/managers/base/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/api/methods/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/managers/base/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/api/methods/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/managers/base/package-use.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/managers/class-use/CommandManager.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/managers/class-use/ConfigManager.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/managers/class-use/MySQLManager.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/managers/class-use/PluginsManager.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/managers/class-use/SQLiteManager.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/managers/class-use/SchedulerManager.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/managers/package-frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/managers/package-frame.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/managers/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/managers/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/managers/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/managers/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/managers/package-use.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/methods/BukkitMethods.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/api/RegistrationAPI.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/methods/CoreMethods.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/api/methods/CoreMethods.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/methods/PermissionsMethods.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/api/methods/PermissionsMethods.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/methods/class-use/BukkitMethods.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/methods/class-use/CoreMethods.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/methods/class-use/PermissionsMethods.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/methods/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/methods/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/commands/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/methods/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/api/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/methods/package-use.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/package-frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/package-frame.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/package-use.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/runnables/PluginsManagerRunnable.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/runnables/PluginsManagerRunnable.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/runnables/class-use/PluginsManagerRunnable.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/runnables/package-frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/runnables/package-frame.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/runnables/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/runnables/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/runnables/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/runnables/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/runnables/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/api/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/utils/ConfigUtils.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/utils/ConfigUtils.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/utils/LoggerUtils.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/utils/LoggerUtils.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/utils/class-use/ConfigUtils.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/utils/class-use/LoggerUtils.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/utils/package-frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/utils/package-frame.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/utils/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/utils/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/utils/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/utils/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ru/zoom4ikdan4ik/core/utils/package-use.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/plugin.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/Core.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/Core.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/enums/CommandsEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/enums/CommandsEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/enums/MessagesEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/enums/MessagesEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/enums/PermissionsEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/enums/PermissionsEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/interfaces/IBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/interfaces/IBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/interfaces/IConfigManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/interfaces/IConfigManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/interfaces/ICore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/api/interfaces/ICore.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/interfaces/IPluginsManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/interfaces/ISQLManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/interfaces/ISchedulerManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/api/interfaces/ISchedulerManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/interfaces/enums/ICommands.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/interfaces/enums/IMessages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/api/interfaces/enums/IMessages.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/interfaces/enums/IPermissions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/api/interfaces/enums/IPermissions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/interfaces/enums/ISQLs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/api/interfaces/enums/ISQLs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/managers/CommandManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/managers/CommandManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/managers/ConfigManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/managers/ConfigManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/managers/MySQLManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/managers/MySQLManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/managers/PluginsManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/managers/PluginsManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/managers/SQLiteManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/managers/SchedulerManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/managers/SchedulerManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/managers/base/SQLBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/api/managers/AbstractSQLManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/methods/BukkitMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/api/methods/BukkitMethods.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/methods/CoreMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/api/methods/CoreMethods.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/methods/PermissionsMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/api/methods/PermissionsMethods.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/runnables/PluginsManagerRunnable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/runnables/PluginsManagerRunnable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/utils/ConfigUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/utils/ConfigUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ZDCore.iws" beforeDir="false" afterPath="$PROJECT_DIR$/ZDCore.iws" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/ZDCore.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/ZDCore.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/api/RegistrationAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/api/RegistrationAPI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -230,15 +53,36 @@
       <option name="presentableId" value="Default" />
       <updated>1590506291223</updated>
       <workItem from="1590506292401" duration="95000" />
-      <workItem from="1590940383754" duration="4134000" />
+      <workItem from="1590940383754" duration="5223000" />
     </task>
+    <task id="LOCAL-00001" summary="ZDCore V6.0">
+      <created>1590944670692</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1590944670692</updated>
+    </task>
+    <task id="LOCAL-00002" summary="ZDCore V6.0">
+      <created>1590944740098</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1590944740098</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="ZDCore V6.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="ZDCore V6.0" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="488" y="70" key="#com.intellij.ide.util.MemberChooser" timestamp="1590943337932">
@@ -253,6 +97,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="430" y="83" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1366.728@0.0.1366.728" timestamp="1590944478669" />
+    <state x="52" y="0" key="CommitChangelistDialog2" timestamp="1590944739341">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="52" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1590944739341" />
     <state x="474" y="183" key="FileChooserDialogImpl" timestamp="1590944463326">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -263,5 +111,9 @@
     </state>
     <state x="313" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1590944528038" />
     <state x="440" y="94" key="SettingsEditor/0.0.1920.1040/-1366.312.1366.728@0.0.1920.1040" timestamp="1590506344621" />
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1590944744973">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1590944744973" />
   </component>
 </project>
