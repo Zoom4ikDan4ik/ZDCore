@@ -1,4 +1,4 @@
-package ru.zoom4ikdan4ik.core.interfaces;
+package ru.zoom4ikdan4ik.core.api.interfaces;
 
 import org.bukkit.configuration.file.FileConfiguration;
 

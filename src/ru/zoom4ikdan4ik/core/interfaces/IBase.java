@@ -6,9 +6,11 @@ import ru.zoom4ikdan4ik.core.Core;
 import ru.zoom4ikdan4ik.core.api.methods.BukkitMethods;
 import ru.zoom4ikdan4ik.core.api.methods.CoreMethods;
 import ru.zoom4ikdan4ik.core.api.methods.PermissionsMethods;
-import ru.zoom4ikdan4ik.core.managers.*;
+import ru.zoom4ikdan4ik.core.managers.CommandManager;
+import ru.zoom4ikdan4ik.core.managers.ConfigManager;
+import ru.zoom4ikdan4ik.core.managers.PluginsManager;
+import ru.zoom4ikdan4ik.core.managers.SchedulerManager;
 import ru.zoom4ikdan4ik.core.runnables.PluginsManagerRunnable;
-import ru.zoom4ikdan4ik.core.utils.ConfigUtils;
 import ru.zoom4ikdan4ik.core.utils.LoggerUtils;
 
 /**
@@ -21,9 +23,8 @@ public interface IBase {
 
     CommandManager commandManager = new CommandManager();
     ConfigManager configManager = new ConfigManager(corePlugin);
-    MySQLManager mySQLManager = new MySQLManager();
     PluginsManager pluginsManager = new PluginsManager();
-    SchedulerManager schedulerManager = new SchedulerManager();
+    SchedulerManager schedulerManager = new SchedulerManager(corePlugin);
 
     BukkitMethods bukkitMethods = new BukkitMethods();
     CoreMethods coreMethods = new CoreMethods();
@@ -32,5 +33,4 @@ public interface IBase {
     PluginsManagerRunnable pluginManagerRunnable = new PluginsManagerRunnable();
 
     LoggerUtils loggerUtils = new LoggerUtils();
-    ConfigUtils configUtils = new ConfigUtils();
 }

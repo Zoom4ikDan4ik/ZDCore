@@ -11,22 +11,22 @@ public enum MessagesEnum implements IMessages, IBase {
 
     private String message;
 
-    MessagesEnum(String message) {
+    MessagesEnum(final String message) {
         this.message = message;
     }
 
     @Override
-    public String getName() {
-        return this.name().toLowerCase();
+    public final String getName() {
+        return this.name();
     }
 
     @Override
-    public String getMessage() {
+    public final String getMessage() {
         return this.message;
     }
 
     @Override
-    public void setMessage(String message) {
+    public final void setMessage(String message) {
         this.message = message;
     }
 }

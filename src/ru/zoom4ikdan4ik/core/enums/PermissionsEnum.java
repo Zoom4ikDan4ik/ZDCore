@@ -12,27 +12,27 @@ public enum PermissionsEnum implements IPermissions, IBase {
 
     private String permission;
 
-    PermissionsEnum(String permission) {
+    PermissionsEnum(final String permission) {
         this.permission = permission;
     }
 
     @Override
-    public String getName() {
-        return this.name().toLowerCase();
+    public final String getName() {
+        return this.name();
     }
 
     @Override
-    public String getPermission() {
+    public final String getPermission() {
         return this.permission;
     }
 
     @Override
-    public void setPermission(String permission) {
+    public final void setPermission(final String permission) {
         this.permission = permission;
     }
 
     @Override
-    public boolean hasPermission(CommandSender commandSender) {
+    public final boolean hasPermission(final CommandSender commandSender) {
         return commandSender.hasPermission(this.permission);
     }
 }

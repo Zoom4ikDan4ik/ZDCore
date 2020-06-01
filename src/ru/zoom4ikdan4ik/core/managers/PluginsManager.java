@@ -9,10 +9,10 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
-public class PluginsManager implements IBase {
+public final class PluginsManager implements IBase {
     private Map<String, Boolean> modules = new HashMap<>();
 
-    public void reloadPlugins() {
+    public final void reloadPlugins() {
         this.schedulerManager.clearScheduler();
 
         RegistrationAPI.registerPlugin(this.corePlugin, this.corePlugin);
@@ -27,12 +27,12 @@ public class PluginsManager implements IBase {
         }
     }
 
-    public void disablingPlugins() {
+    public final void disablingPlugins() {
         for (String key : this.modules.keySet())
             this.bukkitPluginManager.enablePlugin(this.bukkitPluginManager.getPlugin(key));
     }
 
-    public void checkingModules() {
+    public final void checkingModules() {
         Iterator<Map.Entry<String, Boolean>> iterator = this.modules.entrySet().iterator();
         Map<String, Boolean> newMap = new HashMap<String, Boolean>();
 
@@ -62,7 +62,7 @@ public class PluginsManager implements IBase {
         this.modules = newMap;
     }
 
-    public void put(String key, boolean flag) {
+    public final void put(final String key, final boolean flag) {
         this.modules.put(key, flag);
     }
 }

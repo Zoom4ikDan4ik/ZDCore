@@ -4,17 +4,13 @@ import org.bukkit.Bukkit;
 import org.bukkit.command.PluginCommand;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.Plugin;
-import ru.zoom4ikdan4ik.core.api.interfaces.ICore;
-import ru.zoom4ikdan4ik.core.api.interfaces.ISQLManager;
-import ru.zoom4ikdan4ik.core.api.interfaces.ISchedulerManager;
+import ru.zoom4ikdan4ik.core.api.interfaces.*;
 import ru.zoom4ikdan4ik.core.interfaces.IBase;
-import ru.zoom4ikdan4ik.core.interfaces.ICommandManager;
-import ru.zoom4ikdan4ik.core.interfaces.IConfigManager;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class RegistrationAPI implements IBase {
+public final class RegistrationAPI implements IBase {
     /**
      * Record all of the plugins that work from ZDCore
      */
@@ -27,7 +23,7 @@ public class RegistrationAPI implements IBase {
     /**
      * Registration of plugins, processing of their managers
      */
-    public static void registerPlugin(ICore manager, Plugin plugin) {
+    public final static void registerPlugin(ICore manager, Plugin plugin) {
         if (!corePlugin.getName().equalsIgnoreCase(plugin.getName()))
             plugins.put(plugin, manager);
 

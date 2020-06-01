@@ -5,13 +5,13 @@ import org.bukkit.World;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.Plugin;
+import ru.zoom4ikdan4ik.core.api.interfaces.IConfigManager;
 import ru.zoom4ikdan4ik.core.api.interfaces.ICore;
 import ru.zoom4ikdan4ik.core.api.interfaces.enums.ICommands;
 import ru.zoom4ikdan4ik.core.api.interfaces.enums.IMessages;
 import ru.zoom4ikdan4ik.core.api.interfaces.enums.IPermissions;
 import ru.zoom4ikdan4ik.core.api.interfaces.enums.ISQLs;
 import ru.zoom4ikdan4ik.core.interfaces.IBase;
-import ru.zoom4ikdan4ik.core.interfaces.IConfigManager;
 
 import java.io.File;
 import java.io.IOException;
@@ -239,16 +239,20 @@ public abstract class AbstractConfigManager implements IConfigManager, IBase {
     }
 
     public enum CategoriesEnum {
-        MESSAGES("messages"), PERMISSIONS("permissions"), COMMANDS("commands"), QUERIES("queries");
+        MESSAGES("messages"), PERMISSIONS("permissions"), COMMANDS("commands"), QUERIES("queries"), CUSTOMS("customs");
 
-        private final String category;
+        private String category;
 
         CategoriesEnum(String category) {
             this.category = category;
         }
 
-        public String getCategory() {
-            return this.category;
+        public final String getCategory() {
+            return this.category.toUpperCase();
+        }
+
+        public final void setCategory(String category) {
+            this.category = category;
         }
     }
 }

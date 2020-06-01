@@ -9,24 +9,24 @@ import ru.zoom4ikdan4ik.core.interfaces.IBase;
 
 import java.io.IOException;
 
-public class SubCommandScript implements ISubCommandManager, IBase {
+public final class SubCommandScript implements ISubCommandManager, IBase {
     @Override
-    public boolean onlyPlayer() {
+    public final boolean onlyPlayer() {
         return false;
     }
 
     @Override
-    public IPermissions getPermission() {
+    public final IPermissions getPermission() {
         return PermissionsEnum.SCRIPT;
     }
 
     @Override
-    public int getArgsLength() {
+    public final int getArgsLength() {
         return 1;
     }
 
     @Override
-    public void onCommand(CommandSender commandSender, Command command, String string, String[] strings) {
+    public final void onCommand(CommandSender commandSender, Command command, String string, String[] strings) {
         try {
             this.coreMethods.useScripts(strings[1]);
             this.coreMethods.sendMessage(commandSender, "&aStarted...");

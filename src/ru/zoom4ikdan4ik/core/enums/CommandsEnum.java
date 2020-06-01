@@ -22,17 +22,17 @@ public enum CommandsEnum implements ICommands {
     }
 
     @Override
-    public String getName() {
-        return this.name().toLowerCase();
+    public final String getName() {
+        return this.name();
     }
 
     @Override
-    public String getSubCommand() {
+    public final String getSubCommand() {
         return this.command;
     }
 
     @Override
-    public ISubCommandManager getSubCommandManager() {
+    public final ISubCommandManager getSubCommandManager() {
         return this.subCommandManager;
     }
 }

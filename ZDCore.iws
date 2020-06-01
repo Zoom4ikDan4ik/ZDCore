@@ -2,16 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="657eed47-b0b7-42c3-a634-bea3f30ad946" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/api/managers/AbstractSchedulerManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ZDCore.iws" beforeDir="false" afterPath="$PROJECT_DIR$/ZDCore.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/api/interfaces/enums/ICommands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/api/interfaces/enums/ICommands.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/api/interfaces/enums/IMessages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/api/interfaces/enums/IMessages.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/api/interfaces/enums/IPermissions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/api/interfaces/enums/IPermissions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/api/interfaces/enums/ISQLs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/api/interfaces/enums/ISQLs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/ZDCore.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/ZDCore.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/plugin.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/Core.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/Core.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/api/RegistrationAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/api/RegistrationAPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/api/interfaces/ICore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/api/interfaces/ICore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/api/managers/AbstractCommandManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/api/managers/AbstractCommandManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/api/managers/AbstractConfigManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/api/managers/AbstractConfigManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/api/managers/AbstractSQLManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/api/managers/AbstractSQLManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/commands/SubCommandID.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/commands/SubCommandID.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/commands/SubCommandReload.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/commands/SubCommandReload.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/commands/SubCommandScript.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/commands/SubCommandScript.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/commands/SubCommandUnix.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/commands/SubCommandUnix.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/enums/CommandsEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/enums/CommandsEnum.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/enums/MessagesEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/enums/MessagesEnum.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/enums/PermissionsEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/enums/PermissionsEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/interfaces/IBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/interfaces/IBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/interfaces/ICommandManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/api/interfaces/ICommandManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/interfaces/IConfigManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/api/interfaces/IConfigManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/managers/CommandManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/managers/CommandManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/managers/ConfigManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/managers/ConfigManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/managers/MySQLManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/managers/PluginsManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/managers/PluginsManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/managers/SchedulerManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/managers/SchedulerManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/runnables/PluginsManagerRunnable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/runnables/PluginsManagerRunnable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/utils/ConfigUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/utils/LoggerUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/utils/LoggerUtils.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +79,10 @@
       <updated>1590506291223</updated>
       <workItem from="1590506292401" duration="95000" />
       <workItem from="1590940383754" duration="5976000" />
-      <workItem from="1590951893468" duration="700000" />
+      <workItem from="1590951893468" duration="768000" />
+      <workItem from="1590995562070" duration="85000" />
+      <workItem from="1590995780046" duration="105000" />
+      <workItem from="1590998172126" duration="4292000" />
     </task>
     <task id="LOCAL-00001" summary="ZDCore V6.0">
       <created>1590944670692</created>
@@ -84,7 +105,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590945768021</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="ZDCore V6.1">
+      <created>1590952650479</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1590952650479</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -94,16 +122,17 @@
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="ZDCore V6.0" />
-    <option name="LAST_COMMIT_MESSAGE" value="ZDCore V6.0" />
+    <MESSAGE value="ZDCore V6.1" />
+    <option name="LAST_COMMIT_MESSAGE" value="ZDCore V6.1" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="488" y="70" key="#com.intellij.ide.util.MemberChooser" timestamp="1590952528775">
+    <state x="488" y="70" key="#com.intellij.ide.util.MemberChooser" timestamp="1591000164542">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="488" y="70" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1590952528775" />
+    <state x="488" y="70" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1591000164542" />
     <state x="172" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1590943975784">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -112,10 +141,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="430" y="83" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1366.728@0.0.1366.728" timestamp="1590945649474" />
-    <state x="52" y="0" key="CommitChangelistDialog2" timestamp="1590945762019">
+    <state x="52" y="0" key="CommitChangelistDialog2" timestamp="1590952648720">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="52" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1590945762019" />
+    <state x="52" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1590952648720" />
     <state x="474" y="183" key="FileChooserDialogImpl" timestamp="1590944463326">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -142,9 +171,13 @@
     </state>
     <state x="313" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1590944528038" />
     <state x="440" y="94" key="SettingsEditor/0.0.1920.1040/-1366.312.1366.728@0.0.1920.1040" timestamp="1590506344621" />
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1590945775772">
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1590952655653">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1590945775772" />
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1590952655653" />
+    <state x="339" y="162" key="run.anything.popup" timestamp="1590998769835">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1590998769835" />
   </component>
 </project>

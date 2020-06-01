@@ -7,24 +7,24 @@ import ru.zoom4ikdan4ik.core.api.interfaces.enums.IPermissions;
 import ru.zoom4ikdan4ik.core.enums.PermissionsEnum;
 import ru.zoom4ikdan4ik.core.interfaces.IBase;
 
-public class SubCommandUnix implements ISubCommandManager, IBase {
+public final class SubCommandUnix implements ISubCommandManager, IBase {
     @Override
-    public boolean onlyPlayer() {
+    public final boolean onlyPlayer() {
         return false;
     }
 
     @Override
-    public IPermissions getPermission() {
+    public final IPermissions getPermission() {
         return PermissionsEnum.UNIX;
     }
 
     @Override
-    public int getArgsLength() {
+    public final int getArgsLength() {
         return 0;
     }
 
     @Override
-    public void onCommand(CommandSender commandSender, Command command, String string, String[] strings) {
+    public final void onCommand(CommandSender commandSender, Command command, String string, String[] strings) {
         this.coreMethods.sendMessage(commandSender, "&aUnix time: " + this.coreMethods.getUnixTime());
     }
 }
