@@ -23,7 +23,7 @@ public final class RegistrationAPI implements IBase {
     /**
      * Registration of plugins, processing of their managers
      */
-    public final static void registerPlugin(ICore manager, Plugin plugin) {
+    public final static void registerPlugin(final ICore manager, final Plugin plugin) {
         if (!corePlugin.getName().equalsIgnoreCase(plugin.getName()))
             plugins.put(plugin, manager);
 
@@ -33,7 +33,7 @@ public final class RegistrationAPI implements IBase {
         registerCommandManager(plugin, manager.getCommandManager());
     }
 
-    public final static void registerConfigManager(Plugin plugin, IConfigManager configManager) {
+    public final static void registerConfigManager(final Plugin plugin, final IConfigManager configManager) {
         if (configManager != null) {
             loggerUtils.info(plugin, "Loading configs...");
 
@@ -44,7 +44,7 @@ public final class RegistrationAPI implements IBase {
         }
     }
 
-    public final static void registerSQLManager(Plugin plugin, ISQLManager sqlManager) {
+    public final static void registerSQLManager(final Plugin plugin, final ISQLManager sqlManager) {
         if (sqlManager != null) {
             loggerUtils.info(plugin, "Create tables...");
 
@@ -52,7 +52,7 @@ public final class RegistrationAPI implements IBase {
         }
     }
 
-    public final static void registerSchedulerManager(Plugin plugin, ISchedulerManager schedulerManager) {
+    public final static void registerSchedulerManager(final Plugin plugin, final ISchedulerManager schedulerManager) {
         if (schedulerManager != null) {
             loggerUtils.info(plugin, "Add schedulers...");
 
@@ -60,7 +60,7 @@ public final class RegistrationAPI implements IBase {
         }
     }
 
-    public final static void registerCommandManager(Plugin plugin, ICommandManager commandManager) {
+    public final static void registerCommandManager(final Plugin plugin, final ICommandManager commandManager) {
         if (commandManager != null) {
             loggerUtils.info(plugin, "Register commands...");
 

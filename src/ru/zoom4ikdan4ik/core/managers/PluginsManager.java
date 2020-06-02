@@ -3,6 +3,7 @@ package ru.zoom4ikdan4ik.core.managers;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.Plugin;
 import ru.zoom4ikdan4ik.core.api.RegistrationAPI;
+import ru.zoom4ikdan4ik.core.api.managers.AbstractSchedulerManager;
 import ru.zoom4ikdan4ik.core.interfaces.IBase;
 
 import java.util.HashMap;
@@ -13,14 +14,17 @@ public final class PluginsManager implements IBase {
     private Map<String, Boolean> modules = new HashMap<>();
 
     public final void reloadPlugins() {
-        this.schedulerManager.clearScheduler();
-
         RegistrationAPI.registerPlugin(this.corePlugin, this.corePlugin);
 
         this.checkingModules();
 
         for (String key : this.modules.keySet()) {
             Plugin plugin = this.bukkitPluginManager.getPlugin(key);
+
+            AbstractSchedulerManager abstractSchedulerManager = RegistrationAPI.getPlugins().get(plugin).getSchedulerManager();
+
+            abstractSchedulerManager.stopSchedulers();
+            abstractSchedulerManager.clearSchedulerRunnable();
 
             this.bukkitPluginManager.disablePlugin(plugin);
             this.bukkitPluginManager.enablePlugin(plugin);

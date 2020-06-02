@@ -25,6 +25,6 @@ public final class PluginsManagerRunnable implements Runnable, IBase {
 
         this.pluginsManager.checkingModules();
 
-        this.schedulerManager.removeScheduler(this);
+        this.schedulerManager.removeRunnable(this);
     }
 }

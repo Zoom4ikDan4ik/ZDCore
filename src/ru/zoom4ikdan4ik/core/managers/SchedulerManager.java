@@ -10,6 +10,6 @@ public final class SchedulerManager extends AbstractSchedulerManager {
 
     @Override
     public final void addScheduler() {
-        this.schedulerManager.addScheduler(this.pluginManagerRunnable);
+        this.schedulerManager.addSchedulerRunnable(new SchedulerRunnable(this.pluginManagerRunnable));
     }
 }
