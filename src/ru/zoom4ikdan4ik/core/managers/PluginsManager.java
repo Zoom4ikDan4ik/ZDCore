@@ -6,20 +6,35 @@ import ru.zoom4ikdan4ik.core.api.RegistrationAPI;
 import ru.zoom4ikdan4ik.core.api.managers.AbstractSchedulerManager;
 import ru.zoom4ikdan4ik.core.interfaces.IBase;
 
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
 
 public final class PluginsManager implements IBase {
-    private Map<String, Boolean> modules = new HashMap<>();
+    private List<PluginActivity> pluginActivities = new ArrayList<>();
+
+    public final List<PluginActivity> getPluginActivities() {
+        return this.pluginActivities;
+    }
+
+    public final void setPluginActivities(final List<PluginActivity> pluginActivities) {
+        this.pluginActivities = pluginActivities;
+    }
+
+    public final boolean addPluginActivities(PluginActivity pluginActivity) {
+        return this.pluginActivities.add(pluginActivity);
+    }
+
+    public final boolean removePluginActivities(PluginActivity pluginActivity) {
+        return this.pluginActivities.remove(pluginActivity);
+    }
 
     public final void reloadPlugins() {
         RegistrationAPI.registerPlugin(this.corePlugin, this.corePlugin);
 
         this.checkingModules();
 
-        for (String key : this.modules.keySet()) {
-            Plugin plugin = this.bukkitPluginManager.getPlugin(key);
+        for (PluginActivity pluginActivity : this.getPluginActivities()) {
+            Plugin plugin = pluginActivity.getPlugin();
 
             this.bukkitPluginManager.disablePlugin(plugin);
 
@@ -33,23 +48,23 @@ public final class PluginsManager implements IBase {
     }
 
     public final void disablingPlugins() {
-        for (String key : this.modules.keySet())
-            this.bukkitPluginManager.disablePlugin(this.bukkitPluginManager.getPlugin(key));
+        for (PluginActivity pluginActivity : this.getPluginActivities()) {
+            Plugin plugin = pluginActivity.getPlugin();
+
+            if (plugin != null)
+                this.bukkitPluginManager.disablePlugin(pluginActivity.getPlugin());
+        }
     }
 
     public final void checkingModules() {
-        Iterator<Map.Entry<String, Boolean>> iterator = this.modules.entrySet().iterator();
-        Map<String, Boolean> newMap = new HashMap<String, Boolean>();
+        List<PluginActivity> pluginActivities = new ArrayList<>();
 
-        while (iterator.hasNext()) {
-            final Map.Entry<String, Boolean> key = iterator.next();
+        for (PluginActivity pluginActivity : this.getPluginActivities()) {
+            Plugin plugin = pluginActivity.getPlugin();
 
-            final Plugin plugin = this.bukkitPluginManager.getPlugin(key.getKey());
-            final boolean isEnabled = key.getValue();
-
-            if (plugin != null) {
-                if (isEnabled) {
-                    newMap.put(plugin.getName(), true);
+            if (plugin != null)
+                if (pluginActivity.isActive()) {
+                    pluginActivities.add(pluginActivity);
 
                     this.loggerUtils.info(this.corePlugin, "%% found! =)", plugin.getName());
                 } else {
@@ -57,17 +72,41 @@ public final class PluginsManager implements IBase {
 
                     this.loggerUtils.info(this.corePlugin, "%% found and disabled! =|", plugin.getName());
                 }
-            } else {
-                iterator.remove();
-
+            else
                 this.loggerUtils.info(this.corePlugin, "%% not found! =(", plugin.getName());
-            }
         }
 
-        this.modules = newMap;
+        this.pluginActivities = pluginActivities;
     }
 
     public final void put(final String key, final boolean flag) {
-        this.modules.put(key, flag);
+        this.addPluginActivities(new PluginActivity(this.bukkitPluginManager.getPlugin(key), flag));
+    }
+
+    public final class PluginActivity {
+        private final Plugin plugin;
+        private boolean active;
+
+        public PluginActivity(final Plugin plugin) {
+            this.plugin = plugin;
+            this.active = true;
+        }
+
+        public PluginActivity(final Plugin plugin, final boolean active) {
+            this.plugin = plugin;
+            this.active = active;
+        }
+
+        public final Plugin getPlugin() {
+            return this.plugin;
+        }
+
+        public final boolean isActive() {
+            return this.active;
+        }
+
+        public final void setActive(final boolean active) {
+            this.active = active;
+        }
     }
 }
