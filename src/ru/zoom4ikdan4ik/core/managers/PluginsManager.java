@@ -39,8 +39,10 @@ public final class PluginsManager implements IBase {
 
             AbstractSchedulerManager abstractSchedulerManager = RegistrationAPI.getPlugins().get(plugin).getSchedulerManager();
 
-            abstractSchedulerManager.stopSchedulers();
-            abstractSchedulerManager.clearSchedulerRunnable();
+            if (abstractSchedulerManager != null) {
+                abstractSchedulerManager.stopSchedulers();
+                abstractSchedulerManager.clearSchedulerRunnable();
+            }
 
             this.bukkitPluginManager.disablePlugin(plugin);
             this.bukkitPluginManager.enablePlugin(plugin);
@@ -78,10 +80,12 @@ public final class PluginsManager implements IBase {
                 this.loggerUtils.info(this.corePlugin, "%% not found! =(", plugin.getName());
         }
 
-        this.pluginActivities = pluginActivities;
+        this.setPluginActivities(pluginActivities);
     }
 
     public final void reloadModules() {
+        this.setPluginActivities(new ArrayList<>());
+
         ConfigurationSection modules = this.configManager.getConfigurationSection("Modules");
 
         if (modules != null)
