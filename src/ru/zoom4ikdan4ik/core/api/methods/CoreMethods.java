@@ -3,8 +3,6 @@ package ru.zoom4ikdan4ik.core.api.methods;
 import org.bukkit.ChatColor;
 import org.bukkit.World;
 import org.bukkit.command.CommandSender;
-import org.bukkit.configuration.file.FileConfiguration;
-import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.Plugin;
 import ru.zoom4ikdan4ik.core.api.interfaces.enums.IMessages;
 import ru.zoom4ikdan4ik.core.enums.MessagesEnum;
@@ -18,19 +16,19 @@ import java.io.InputStream;
 import java.util.List;
 
 public class CoreMethods implements IBase {
-    public long getSystemTime() {
+    public final long getSystemTime() {
         return System.currentTimeMillis();
     }
 
-    public long getUnixTime() {
+    public final long getUnixTime() {
         return this.getSystemTime() / 1000;
     }
 
-    public String color(String string) {
+    public final String color(final String string) {
         return ChatColor.translateAlternateColorCodes('&', string);
     }
 
-    public String getPathServer() {
+    public final String getPathServer() {
         File path = this.corePlugin.getDataFolder();
 
         while (!path.getName().equals("plugins"))
@@ -39,42 +37,42 @@ public class CoreMethods implements IBase {
         return path.getAbsolutePath();
     }
 
-    public World getMainWorld() {
+    public final World getMainWorld() {
         return this.configManager.main_world;
     }
 
-    public String getPathServer(@Nonnull String server) {
+    public final String getPathServer(@Nonnull final String server) {
         return this.getPathServer().replace(this.configManager.server, server);
     }
 
-    public void sendMessageQuery(CommandSender sender, String start) {
+    public final void sendMessageQuery(final CommandSender sender, final String start) {
         String message = null;
 
-        for (MessagesEnum messagesEnum : MessagesEnum.values())
+        for (final MessagesEnum messagesEnum : MessagesEnum.values())
             if (messagesEnum.name().equals(start))
                 message = messagesEnum.getMessage();
 
         this.sendMessage(sender, message);
     }
 
-    public String getQuery(String start, List<String> queriesList) {
-        for (String queries : queriesList)
+    public final String getQuery(final String start, final List<String> queriesList) {
+        for (final String queries : queriesList)
             if (queries.startsWith(start))
                 return queries;
 
         return null;
     }
 
-    public void sendMessage(CommandSender sender, IMessages message) {
+    public final void sendMessage(final CommandSender sender, final IMessages message) {
         this.sendMessage(sender, message.getMessage());
     }
 
-    public void sendMessage(CommandSender sender, String message) {
+    public final void sendMessage(final CommandSender sender, final String message) {
         sender.sendMessage(this.color(message));
     }
 
-    public void useScripts(String script) throws IOException {
-        File file = new File(this.configManager.scripts_path + script);
+    public final void useScripts(final String script) throws IOException {
+        final File file = new File(this.configManager.scripts_path + script);
 
         if (!file.exists())
             throw new IOException("File not found!");
@@ -82,18 +80,14 @@ public class CoreMethods implements IBase {
         Runtime.getRuntime().exec("sh " + file.getAbsolutePath());
     }
 
-    public FileConfiguration createFileConfiguration(String config, Plugin plugin) {
-        return YamlConfiguration.loadConfiguration(this.createConfigYML(config, plugin));
-    }
-
-    public File createConfigYML(String cfg, Plugin plugin) {
+    public final File createConfigYML(final String config, final Plugin plugin) {
         File file = null;
 
-        if (cfg != null)
-            file = new File(plugin.getDataFolder(), cfg + ".yml");
+        if (config != null)
+            file = new File(plugin.getDataFolder(), config + ".yml");
 
         if (!file.exists()) {
-            InputStream resourceAsStream = plugin.getClass().getResourceAsStream("/ru/zoom4ikdan4ik/configs/" + cfg + ".yml");
+            final InputStream resourceAsStream = plugin.getClass().getResourceAsStream("/ru/zoom4ikdan4ik/configs/" + config + ".yml");
             plugin.getDataFolder().mkdirs();
 
             if (resourceAsStream != null)

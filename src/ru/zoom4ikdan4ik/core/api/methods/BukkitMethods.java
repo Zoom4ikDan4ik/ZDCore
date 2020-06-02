@@ -12,39 +12,39 @@ import javax.annotation.Nonnull;
 import java.util.List;
 
 public class BukkitMethods implements IBase {
-    public List<World> getWorlds() {
+    public final List<World> getWorlds() {
         return Bukkit.getWorlds();
     }
 
-    public Player searchPlayer(@Nonnull String player) {
-        for (Player players : Bukkit.getOnlinePlayers())
+    public final Player searchPlayer(@Nonnull final String player) {
+        for (final Player players : Bukkit.getOnlinePlayers())
             if (players.getName().toLowerCase().startsWith(player.toLowerCase()))
                 return players;
 
-        for (OfflinePlayer players : Bukkit.getOfflinePlayers())
+        for (final OfflinePlayer players : Bukkit.getOfflinePlayers())
             if (players.getName().toLowerCase().startsWith(player.toLowerCase()))
                 return players.getPlayer();
 
-        return null;
+        return Bukkit.getPlayer(player);
     }
 
-    public void useCommand(String command) {
+    public final void useCommand(final String command) {
         Bukkit.dispatchCommand(Bukkit.getConsoleSender(), command);
     }
 
-    public void broadcast(String broadcast) {
+    public final void broadcast(final String broadcast) {
         Bukkit.broadcastMessage(this.coreMethods.color(broadcast));
     }
 
-    public void restartServer() {
+    public final void restartServer() {
         Bukkit.getServer().shutdown();
     }
 
-    public String getItemStringID(@Nonnull ItemStack itemStack) {
+    public final String getItemStringID(@Nonnull final ItemStack itemStack) {
         return String.format("%s:%d", itemStack.getType(), itemStack.getDurability());
     }
 
-    public String getBlockStringID(@Nonnull Block block) {
+    public final String getBlockStringID(@Nonnull final Block block) {
         return String.format("%s:%d", block.getType(), block.getData());
     }
 }

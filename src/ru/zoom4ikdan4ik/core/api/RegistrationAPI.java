@@ -45,7 +45,7 @@ public final class RegistrationAPI implements IBase {
     }
 
     public final static void registerConfigManager(final Plugin plugin, final List<AbstractConfigManager> abstractConfigManagers) {
-        for (AbstractConfigManager abstractConfigManager : abstractConfigManagers) {
+        for (final AbstractConfigManager abstractConfigManager : abstractConfigManagers) {
             loggerUtils.info(plugin, "Loading configs...");
 
             abstractConfigManager.setFileConfig(coreMethods.createConfigYML(abstractConfigManager.getName(), plugin));
@@ -82,7 +82,7 @@ public final class RegistrationAPI implements IBase {
             abstractCommandManager.registerCommands();
             abstractCommandManager.registerSubCommands();
 
-            for (String command : abstractCommandManager.getCommands()) {
+            for (final String command : abstractCommandManager.getCommands()) {
                 PluginCommand pluginCommand = Bukkit.getPluginCommand(command);
 
                 if (pluginCommand.isRegistered()) {
