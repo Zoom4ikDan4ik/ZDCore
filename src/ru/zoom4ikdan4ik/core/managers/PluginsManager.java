@@ -36,13 +36,12 @@ public final class PluginsManager implements IBase {
         for (PluginActivity pluginActivity : this.getPluginActivities()) {
             Plugin plugin = pluginActivity.getPlugin();
 
-            this.bukkitPluginManager.disablePlugin(plugin);
-
             AbstractSchedulerManager abstractSchedulerManager = RegistrationAPI.getPlugins().get(plugin).getSchedulerManager();
 
             abstractSchedulerManager.stopSchedulers();
             abstractSchedulerManager.clearSchedulerRunnable();
 
+            this.bukkitPluginManager.disablePlugin(plugin);
             this.bukkitPluginManager.enablePlugin(plugin);
         }
     }
