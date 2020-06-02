@@ -21,19 +21,20 @@ public final class PluginsManager implements IBase {
         for (String key : this.modules.keySet()) {
             Plugin plugin = this.bukkitPluginManager.getPlugin(key);
 
+            this.bukkitPluginManager.disablePlugin(plugin);
+
             AbstractSchedulerManager abstractSchedulerManager = RegistrationAPI.getPlugins().get(plugin).getSchedulerManager();
 
             abstractSchedulerManager.stopSchedulers();
             abstractSchedulerManager.clearSchedulerRunnable();
 
-            this.bukkitPluginManager.disablePlugin(plugin);
             this.bukkitPluginManager.enablePlugin(plugin);
         }
     }
 
     public final void disablingPlugins() {
         for (String key : this.modules.keySet())
-            this.bukkitPluginManager.enablePlugin(this.bukkitPluginManager.getPlugin(key));
+            this.bukkitPluginManager.disablePlugin(this.bukkitPluginManager.getPlugin(key));
     }
 
     public final void checkingModules() {

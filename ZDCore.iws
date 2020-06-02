@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="657eed47-b0b7-42c3-a634-bea3f30ad946" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/ZDCore.iws" beforeDir="false" afterPath="$PROJECT_DIR$/ZDCore.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/api/RegistrationAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/api/RegistrationAPI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/api/methods/BukkitMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/api/methods/BukkitMethods.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/api/methods/CoreMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/api/methods/CoreMethods.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/api/methods/PermissionsMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/api/methods/PermissionsMethods.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/managers/PluginsManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/managers/PluginsManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +59,7 @@
       <workItem from="1590998172126" duration="4533000" />
       <workItem from="1591090898864" duration="1769000" />
       <workItem from="1591094031010" duration="2634000" />
-      <workItem from="1591099783049" duration="7490000" />
+      <workItem from="1591099783049" duration="7641000" />
     </task>
     <task id="LOCAL-00001" summary="ZDCore V6.0">
       <created>1590944670692</created>
@@ -120,7 +117,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591107517457</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="ZDCore V6.5">
+      <created>1591108070766</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1591108070766</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -157,10 +161,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="430" y="83" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1366.728@0.0.1366.728" timestamp="1590945649474" />
-    <state x="52" y="0" key="CommitChangelistDialog2" timestamp="1591107510778">
+    <state x="52" y="0" key="CommitChangelistDialog2" timestamp="1591108069290">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="52" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1591107510778" />
+    <state x="52" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1591108069290" />
     <state x="474" y="183" key="FileChooserDialogImpl" timestamp="1590944463326">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -187,10 +191,10 @@
     </state>
     <state x="313" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1590944528038" />
     <state x="440" y="94" key="SettingsEditor/0.0.1920.1040/-1366.312.1366.728@0.0.1920.1040" timestamp="1590506344621" />
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1591107520084">
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1591108073463">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1591107520084" />
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1591108073463" />
     <state x="390" y="99" width="585" height="530" key="find.popup" timestamp="1591104698365">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
