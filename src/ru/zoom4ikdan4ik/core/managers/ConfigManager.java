@@ -1,7 +1,7 @@
 package ru.zoom4ikdan4ik.core.managers;
 
 import org.bukkit.World;
-import ru.zoom4ikdan4ik.core.api.interfaces.ICore;
+import org.bukkit.plugin.Plugin;
 import ru.zoom4ikdan4ik.core.api.managers.AbstractConfigManager;
 import ru.zoom4ikdan4ik.core.enums.CommandsEnum;
 import ru.zoom4ikdan4ik.core.enums.MessagesEnum;
@@ -11,7 +11,7 @@ public final class ConfigManager extends AbstractConfigManager {
     public String server, scripts_path;
     public World main_world;
 
-    public ConfigManager(ICore plugin) {
+    public ConfigManager(Plugin plugin) {
         super(plugin);
     }
 

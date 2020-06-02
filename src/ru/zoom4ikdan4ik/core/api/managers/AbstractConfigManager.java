@@ -6,7 +6,6 @@ import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.Plugin;
 import ru.zoom4ikdan4ik.core.api.interfaces.IConfigManager;
-import ru.zoom4ikdan4ik.core.api.interfaces.ICore;
 import ru.zoom4ikdan4ik.core.api.interfaces.enums.ICommands;
 import ru.zoom4ikdan4ik.core.api.interfaces.enums.IMessages;
 import ru.zoom4ikdan4ik.core.api.interfaces.enums.IPermissions;
@@ -18,13 +17,22 @@ import java.io.IOException;
 import java.util.List;
 
 public abstract class AbstractConfigManager implements IConfigManager, IBase {
-    private final ICore plugin;
+    private final Plugin plugin;
 
     private File file;
     private FileConfiguration config;
 
-    public AbstractConfigManager(ICore plugin) {
+    public AbstractConfigManager(Plugin plugin) {
         this.plugin = plugin;
+    }
+
+    @Override
+    public String getName() {
+        return this.getPlugin().getName();
+    }
+
+    public final Plugin getPlugin() {
+        return this.plugin;
     }
 
     public final FileConfiguration getConfig() {
@@ -47,7 +55,7 @@ public abstract class AbstractConfigManager implements IConfigManager, IBase {
         try {
             this.getConfig().save(this.getFileConfig());
         } catch (IOException error) {
-            this.loggerUtils.info((Plugin) this.plugin, error.getMessage());
+            this.loggerUtils.info(this.plugin, error.getMessage());
         }
     }
 

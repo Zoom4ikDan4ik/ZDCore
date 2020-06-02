@@ -12,6 +12,7 @@ import ru.zoom4ikdan4ik.core.api.managers.AbstractSchedulerManager;
 import ru.zoom4ikdan4ik.core.interfaces.IBase;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public final class RegistrationAPI implements IBase {
@@ -33,7 +34,7 @@ public final class RegistrationAPI implements IBase {
         if (!corePlugin.getName().equalsIgnoreCase(plugin.getName()))
             plugins.put(plugin, manager);
 
-        registerConfigManager(plugin, manager.getConfigManager());
+        registerConfigManager(plugin, manager.getConfigManagers());
         registerSQLManager(plugin, manager.getSQLManager());
         registerSchedulerManager(plugin, manager.getSchedulerManager());
         registerCommandManager(plugin, manager.getCommandManager());
@@ -43,11 +44,11 @@ public final class RegistrationAPI implements IBase {
         loggerUtils.info(plugin, "Started with %% sec.", ((end - start) / 1000.0));
     }
 
-    public final static void registerConfigManager(final Plugin plugin, final AbstractConfigManager abstractConfigManager) {
-        if (abstractConfigManager != null) {
+    public final static void registerConfigManager(final Plugin plugin, final List<AbstractConfigManager> abstractConfigManagers) {
+        for (AbstractConfigManager abstractConfigManager : abstractConfigManagers) {
             loggerUtils.info(plugin, "Loading configs...");
 
-            abstractConfigManager.setFileConfig(coreMethods.createConfigYML(plugin.getName(), plugin));
+            abstractConfigManager.setFileConfig(coreMethods.createConfigYML(abstractConfigManager.getName(), plugin));
             abstractConfigManager.setConfig(YamlConfiguration.loadConfiguration(abstractConfigManager.getFileConfig()));
             abstractConfigManager.loadConfig();
             abstractConfigManager.save();

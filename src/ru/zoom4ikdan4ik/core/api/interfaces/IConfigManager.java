@@ -8,6 +8,8 @@ import java.io.File;
  * Interface for structure of config
  */
 public interface IConfigManager {
+    String getName();
+
     void loadConfig();
 
     FileConfiguration getConfig();

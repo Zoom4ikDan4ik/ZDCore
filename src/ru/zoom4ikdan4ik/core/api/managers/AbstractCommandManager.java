@@ -54,7 +54,7 @@ public abstract class AbstractCommandManager implements ICommandManager, IBase {
             CommandsEnum commands = null;
 
             for (CommandsEnum commandsEnum : CommandsEnum.values())
-                if (commandsEnum.getSubCommand().equals(commander.toLowerCase()))
+                if (commandsEnum.getSubCommand().equals(commander))
                     commands = commandsEnum;
 
             if (commands != null) {

@@ -9,6 +9,10 @@ import ru.zoom4ikdan4ik.core.api.managers.AbstractSQLManager;
 import ru.zoom4ikdan4ik.core.api.managers.AbstractSchedulerManager;
 import ru.zoom4ikdan4ik.core.interfaces.IBase;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 /**
  * Main class for ZDCore
  */
@@ -31,8 +35,8 @@ public final class Core extends JavaPlugin implements ICore, IBase {
     }
 
     @Override
-    public final AbstractConfigManager getConfigManager() {
-        return this.configManager;
+    public final List<AbstractConfigManager> getConfigManagers() {
+        return new ArrayList<>(Arrays.asList(this.configManager));
     }
 
     @Override
