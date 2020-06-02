@@ -1,6 +1,7 @@
 package ru.zoom4ikdan4ik.core.managers;
 
 import org.bukkit.Bukkit;
+import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.plugin.Plugin;
 import ru.zoom4ikdan4ik.core.api.RegistrationAPI;
 import ru.zoom4ikdan4ik.core.api.managers.AbstractSchedulerManager;
@@ -56,6 +57,8 @@ public final class PluginsManager implements IBase {
     }
 
     public final void checkingModules() {
+        this.reloadModules();
+
         List<PluginActivity> pluginActivities = new ArrayList<>();
 
         for (PluginActivity pluginActivity : this.getPluginActivities()) {
@@ -76,6 +79,14 @@ public final class PluginsManager implements IBase {
         }
 
         this.pluginActivities = pluginActivities;
+    }
+
+    public final void reloadModules() {
+        ConfigurationSection modules = this.configManager.getConfigurationSection("Modules");
+
+        if (modules != null)
+            for (final String key : modules.getKeys(false))
+                this.put(key, modules.getBoolean(key));
     }
 
     public final void put(final String key, final boolean flag) {
