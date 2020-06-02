@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="657eed47-b0b7-42c3-a634-bea3f30ad946" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/ZDCore.iws" beforeDir="false" afterPath="$PROJECT_DIR$/ZDCore.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/ZDCore.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/ZDCore.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/managers/PluginsManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/managers/PluginsManager.java" afterDir="false" />
-    </list>
+    <list default="true" id="657eed47-b0b7-42c3-a634-bea3f30ad946" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -60,7 +56,7 @@
       <workItem from="1590998172126" duration="4533000" />
       <workItem from="1591090898864" duration="1769000" />
       <workItem from="1591094031010" duration="2634000" />
-      <workItem from="1591099783049" duration="8806000" />
+      <workItem from="1591099783049" duration="8988000" />
     </task>
     <task id="LOCAL-00001" summary="ZDCore V6.0">
       <created>1590944670692</created>
@@ -132,7 +128,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591108243841</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="ZDCore V6.5">
+      <created>1591109494360</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1591109494360</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -169,10 +172,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="430" y="83" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1366.728@0.0.1366.728" timestamp="1590945649474" />
-    <state x="52" y="0" key="CommitChangelistDialog2" timestamp="1591108242634">
+    <state x="52" y="0" key="CommitChangelistDialog2" timestamp="1591109493089">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="52" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1591108242634" />
+    <state x="52" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1591109493089" />
     <state x="474" y="183" key="FileChooserDialogImpl" timestamp="1590944463326">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -199,10 +202,10 @@
     </state>
     <state x="313" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1590944528038" />
     <state x="440" y="94" key="SettingsEditor/0.0.1920.1040/-1366.312.1366.728@0.0.1920.1040" timestamp="1590506344621" />
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1591108247388">
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1591109497850">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1591108247388" />
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1591109497850" />
     <state x="285" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1591108586348">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
