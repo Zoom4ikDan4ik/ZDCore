@@ -5,5 +5,5 @@ public interface ISQLs {
 
     String getSQL();
 
-    void setSQL(String sql);
+    void setSQL(final String sql);
 }

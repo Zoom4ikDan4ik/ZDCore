@@ -13,11 +13,11 @@ public enum CommandsEnum implements ICommands {
     UNIX("unix", new SubCommandUnix()),
     ID("id", new SubCommandID());
 
-    private final String command;
     private final ISubCommandManager subCommandManager;
+    private String subCommand;
 
-    CommandsEnum(String command, ISubCommandManager subCommandManager) {
-        this.command = command;
+    CommandsEnum(String subCommand, ISubCommandManager subCommandManager) {
+        this.subCommand = subCommand;
         this.subCommandManager = subCommandManager;
     }
 
@@ -28,7 +28,12 @@ public enum CommandsEnum implements ICommands {
 
     @Override
     public final String getSubCommand() {
-        return this.command;
+        return this.subCommand;
+    }
+
+    @Override
+    public final void setSubCommand(final String subCommand) {
+        this.subCommand = subCommand;
     }
 
     @Override

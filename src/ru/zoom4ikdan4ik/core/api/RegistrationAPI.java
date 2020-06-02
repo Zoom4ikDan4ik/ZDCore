@@ -4,7 +4,11 @@ import org.bukkit.Bukkit;
 import org.bukkit.command.PluginCommand;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.Plugin;
-import ru.zoom4ikdan4ik.core.api.interfaces.*;
+import ru.zoom4ikdan4ik.core.api.interfaces.ICore;
+import ru.zoom4ikdan4ik.core.api.managers.AbstractCommandManager;
+import ru.zoom4ikdan4ik.core.api.managers.AbstractConfigManager;
+import ru.zoom4ikdan4ik.core.api.managers.AbstractSQLManager;
+import ru.zoom4ikdan4ik.core.api.managers.AbstractSchedulerManager;
 import ru.zoom4ikdan4ik.core.interfaces.IBase;
 
 import java.util.HashMap;
@@ -24,6 +28,8 @@ public final class RegistrationAPI implements IBase {
      * Registration of plugins, processing of their managers
      */
     public final static void registerPlugin(final ICore manager, final Plugin plugin) {
+        long start = coreMethods.getSystemTime();
+
         if (!corePlugin.getName().equalsIgnoreCase(plugin.getName()))
             plugins.put(plugin, manager);
 
@@ -31,48 +37,59 @@ public final class RegistrationAPI implements IBase {
         registerSQLManager(plugin, manager.getSQLManager());
         registerSchedulerManager(plugin, manager.getSchedulerManager());
         registerCommandManager(plugin, manager.getCommandManager());
+
+        long end = coreMethods.getSystemTime();
+
+        loggerUtils.info(plugin, "Started with %% sec.", ((end - start) / 1000.0));
     }
 
-    public final static void registerConfigManager(final Plugin plugin, final IConfigManager configManager) {
-        if (configManager != null) {
+    public final static void registerConfigManager(final Plugin plugin, final AbstractConfigManager abstractConfigManager) {
+        if (abstractConfigManager != null) {
             loggerUtils.info(plugin, "Loading configs...");
 
-            configManager.setFileConfig(coreMethods.createConfigYML(plugin.getName(), plugin));
-            configManager.setConfig(YamlConfiguration.loadConfiguration(configManager.getFileConfig()));
-            configManager.loadConfig();
-            configManager.save();
+            abstractConfigManager.setFileConfig(coreMethods.createConfigYML(plugin.getName(), plugin));
+            abstractConfigManager.setConfig(YamlConfiguration.loadConfiguration(abstractConfigManager.getFileConfig()));
+            abstractConfigManager.loadConfig();
+            abstractConfigManager.save();
         }
     }
 
-    public final static void registerSQLManager(final Plugin plugin, final ISQLManager sqlManager) {
-        if (sqlManager != null) {
+    public final static void registerSQLManager(final Plugin plugin, final AbstractSQLManager abstractSQLManager) {
+        if (abstractSQLManager != null) {
             loggerUtils.info(plugin, "Create tables...");
 
-            sqlManager.createTables();
+            abstractSQLManager.createTables();
         }
     }
 
-    public final static void registerSchedulerManager(final Plugin plugin, final ISchedulerManager schedulerManager) {
-        if (schedulerManager != null) {
+    public final static void registerSchedulerManager(final Plugin plugin, final AbstractSchedulerManager abstractSchedulerManager) {
+        if (abstractSchedulerManager != null) {
             loggerUtils.info(plugin, "Add schedulers...");
 
-            schedulerManager.addScheduler();
+            abstractSchedulerManager.addScheduler();
+            abstractSchedulerManager.startScheduler();
+
+            loggerUtils.info(plugin, "Starting scheduler...");
         }
     }
 
-    public final static void registerCommandManager(final Plugin plugin, final ICommandManager commandManager) {
-        if (commandManager != null) {
+    public final static void registerCommandManager(final Plugin plugin, final AbstractCommandManager abstractCommandManager) {
+        if (abstractCommandManager != null) {
             loggerUtils.info(plugin, "Register commands...");
 
-            for (String command : commandManager.getCommands()) {
+            abstractCommandManager.unregisterAll();
+            abstractCommandManager.registerCommands();
+            abstractCommandManager.registerSubCommands();
+
+            for (String command : abstractCommandManager.getCommands()) {
                 PluginCommand pluginCommand = Bukkit.getPluginCommand(command);
 
                 if (pluginCommand.isRegistered()) {
-                    loggerUtils.info(plugin, "Command %% was registered by %% plugin", command, pluginCommand.getPlugin().getName());
+                    loggerUtils.info(plugin, "Command %% was registered by %%", command, pluginCommand.getPlugin().getName());
 
-                    Bukkit.getPluginCommand(command).setExecutor(commandManager);
+                    Bukkit.getPluginCommand(command).setExecutor(abstractCommandManager);
                 } else
-                    loggerUtils.info(plugin, "Command %% can't be register by %% plugin", command, pluginCommand.getPlugin().getName());
+                    loggerUtils.info(plugin, "Command %% can't be register by %%", command, pluginCommand.getPlugin().getName());
             }
         }
     }

@@ -5,5 +5,5 @@ public interface IMessages {
 
     String getMessage();
 
-    void setMessage(String message);
+    void setMessage(final String message);
 }

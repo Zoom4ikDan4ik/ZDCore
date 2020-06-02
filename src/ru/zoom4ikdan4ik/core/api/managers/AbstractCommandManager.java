@@ -37,6 +37,11 @@ public abstract class AbstractCommandManager implements ICommandManager, IBase {
         this.subCommands.add(new SubCommand(commands.getSubCommand(), commands.getSubCommandManager()));
     }
 
+    public final void unregisterAll() {
+        this.commands.clear();
+        this.subCommands.clear();
+    }
+
     @Override
     public final List<String> getCommands() {
         return this.commands;
@@ -46,31 +51,38 @@ public abstract class AbstractCommandManager implements ICommandManager, IBase {
     public final boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (args.length > 0) {
             String commander = args[0];
-            CommandsEnum commandsEnum = CommandsEnum.valueOf(commander.toUpperCase());
-            ISubCommandManager subCommandManager = this.getSubCommand(commandsEnum);
+            CommandsEnum commands = null;
 
-            if (subCommandManager != null) {
-                if (!subCommandManager.getPermission().hasPermission(sender)) {
-                    this.coreMethods.sendMessage(sender, MessagesEnum.NOT_HAVE_PERMISSIONS);
+            for (CommandsEnum commandsEnum : CommandsEnum.values())
+                if (commandsEnum.getSubCommand().equals(commander.toLowerCase()))
+                    commands = commandsEnum;
 
-                    return true;
-                }
+            if (commands != null) {
+                ISubCommandManager subCommandManager = this.getSubCommand(commands);
 
-                if (subCommandManager.getArgsLength() != args.length) {
-                    this.coreMethods.sendMessage(sender, MessagesEnum.NUMBER_EXCEPTIONS);
-
-                    return true;
-                }
-
-                if (subCommandManager.onlyPlayer())
-                    if (!(sender instanceof Player)) {
-                        this.coreMethods.sendMessage(sender, MessagesEnum.CONSOLE_SENDER);
+                if (subCommandManager != null) {
+                    if (!subCommandManager.getPermission().hasPermission(sender)) {
+                        this.coreMethods.sendMessage(sender, MessagesEnum.NOT_HAVE_PERMISSIONS);
 
                         return true;
                     }
 
-                subCommandManager.onCommand(sender, command, label, args);
-            } else this.coreMethods.sendMessage(sender, MessagesEnum.NOT_FOUND_PARAMETERS);
+                    if (subCommandManager.getArgsLength() != args.length - 1) {
+                        this.coreMethods.sendMessage(sender, MessagesEnum.NUMBER_EXCEPTIONS);
+
+                        return true;
+                    }
+
+                    if (subCommandManager.onlyPlayer())
+                        if (!(sender instanceof Player)) {
+                            this.coreMethods.sendMessage(sender, MessagesEnum.CONSOLE_SENDER);
+
+                            return true;
+                        }
+
+                    subCommandManager.onCommand(sender, command, label, args);
+                } else this.coreMethods.sendMessage(sender, MessagesEnum.NOT_FOUND_PARAMETERS);
+            } else this.coreMethods.sendMessage(sender, MessagesEnum.NOT_FOUND_COMMAND);
         } else this.coreMethods.sendMessage(sender, MessagesEnum.NUMBER_EXCEPTIONS);
 
         return true;

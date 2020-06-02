@@ -1,5 +1,6 @@
 package ru.zoom4ikdan4ik.core.api.managers;
 
+import com.sun.istack.internal.NotNull;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.scheduler.BukkitScheduler;
@@ -32,23 +33,25 @@ public abstract class AbstractSchedulerManager implements ISchedulerManager, IBa
         return this.schedulerRunnables;
     }
 
-    public final void setSchedulerRunnables(List<SchedulerRunnable> schedulerRunnables) {
+    public final synchronized void setSchedulerRunnables(final List<SchedulerRunnable> schedulerRunnables) {
         this.schedulerRunnables = schedulerRunnables;
     }
 
-    public final boolean addSchedulerRunnable(SchedulerRunnable schedulerRunnable) {
+    public final synchronized boolean addSchedulerRunnable(@NotNull final SchedulerRunnable schedulerRunnable) {
         return this.schedulerRunnables.add(schedulerRunnable);
     }
 
-    public final boolean removeRunnable(Runnable runnable) {
+    public final synchronized boolean removeRunnable(@NotNull final Runnable runnable) {
         SchedulerRunnable schedulerRunnable = this.getSchedulerRunnableOfRunnable(runnable);
 
         if (schedulerRunnable != null)
-            return schedulerRunnable.getRunnables().remove(runnable);
+            if (!schedulerRunnable.getRunnables().isEmpty())
+                return schedulerRunnable.removeScheduler(runnable);
+            else return false;
         else return false;
     }
 
-    public final synchronized SchedulerRunnable getSchedulerRunnableOfRunnable(Runnable runnable) {
+    public final synchronized SchedulerRunnable getSchedulerRunnableOfRunnable(@NotNull final Runnable runnable) {
         for (SchedulerRunnable schedulerRunnable : this.getSchedulerRunnables())
             if (schedulerRunnable.getRunnables().contains(runnable))
                 return schedulerRunnable;
@@ -56,11 +59,11 @@ public abstract class AbstractSchedulerManager implements ISchedulerManager, IBa
         return null;
     }
 
-    public final boolean removeSchedulerRunnable(SchedulerRunnable schedulerRunnable) {
+    public final synchronized boolean removeSchedulerRunnable(final SchedulerRunnable schedulerRunnable) {
         return this.schedulerRunnables.remove(schedulerRunnable);
     }
 
-    public final void clearSchedulerRunnable() {
+    public final synchronized void clearSchedulerRunnable() {
         this.schedulerRunnables.clear();
     }
 
@@ -79,7 +82,7 @@ public abstract class AbstractSchedulerManager implements ISchedulerManager, IBa
         }
 
         public SchedulerRunnable(final Runnable runnable) {
-            this(Arrays.asList(runnable));
+            this(new ArrayList<>(Arrays.asList(runnable)));
         }
 
         public SchedulerRunnable(final List<Runnable> runnables) {
@@ -101,11 +104,11 @@ public abstract class AbstractSchedulerManager implements ISchedulerManager, IBa
             this.active = active;
         }
 
-        public final List<Runnable> getRunnables() {
+        public final synchronized List<Runnable> getRunnables() {
             return this.runnables;
         }
 
-        public final void setRunnables(List<Runnable> runnables) {
+        public final synchronized void setRunnables(List<Runnable> runnables) {
             this.runnables = runnables;
         }
 
@@ -125,16 +128,16 @@ public abstract class AbstractSchedulerManager implements ISchedulerManager, IBa
             this.period = period;
         }
 
-        public final void clearScheduler() {
+        public final synchronized void clearScheduler() {
             this.runnables.clear();
         }
 
-        public final void removeScheduler(final Runnable runnable) {
-            this.runnables.remove(runnable);
+        public final synchronized boolean removeScheduler(@NotNull final Runnable runnable) {
+            return this.runnables.remove(runnable);
         }
 
-        public final void addScheduler(final Runnable runnable) {
-            this.runnables.add(runnable);
+        public final synchronized boolean addScheduler(@NotNull final Runnable runnable) {
+            return this.runnables.add(runnable);
         }
     }
 }

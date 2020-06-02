@@ -20,10 +20,6 @@ public final class Core extends JavaPlugin implements ICore, IBase {
     @Override
     public final void onEnable() {
         RegistrationAPI.registerPlugin(this.corePlugin, this.corePlugin);
-
-        this.loggerUtils.info(this.corePlugin, "Starting scheduler...");
-
-        this.schedulerManager.startScheduler();
     }
 
     /**

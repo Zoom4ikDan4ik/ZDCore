@@ -7,5 +7,7 @@ public interface ICommands {
 
     String getSubCommand();
 
+    void setSubCommand(final String subCommand);
+
     ISubCommandManager getSubCommandManager();
 }

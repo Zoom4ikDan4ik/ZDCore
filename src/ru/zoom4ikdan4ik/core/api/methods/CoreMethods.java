@@ -96,20 +96,21 @@ public class CoreMethods implements IBase {
             InputStream resourceAsStream = plugin.getClass().getResourceAsStream("/ru/zoom4ikdan4ik/configs/" + cfg + ".yml");
             plugin.getDataFolder().mkdirs();
 
-            try {
-                FileOutputStream fileOutputStream = new FileOutputStream(file);
-                byte[] buffer = new byte[65536];
-                int n;
+            if (resourceAsStream != null)
+                try {
+                    FileOutputStream fileOutputStream = new FileOutputStream(file);
+                    byte[] buffer = new byte[65536];
+                    int n;
 
-                while ((n = resourceAsStream.read(buffer)) > 0) {
-                    fileOutputStream.write(buffer, 0, n);
-                    fileOutputStream.flush();
+                    while ((n = resourceAsStream.read(buffer)) > 0) {
+                        fileOutputStream.write(buffer, 0, n);
+                        fileOutputStream.flush();
+                    }
+
+                    fileOutputStream.close();
+                } catch (Exception error) {
+                    this.loggerUtils.info(plugin, error.getMessage());
                 }
-
-                fileOutputStream.close();
-            } catch (Exception error) {
-                this.loggerUtils.info(plugin, error.getMessage());
-            }
         }
 
         return file;

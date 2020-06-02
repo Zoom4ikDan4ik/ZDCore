@@ -53,70 +53,66 @@ public abstract class AbstractConfigManager implements IConfigManager, IBase {
 
     public final void registerMessages(Object[] objects) {
         for (Object object : objects)
-            if (object instanceof IMessages) {
-                IMessages messages = (IMessages) object;
-
-                this.registerMessage(messages.getName(), messages.getMessage());
-            }
+            if (object instanceof IMessages)
+                this.registerMessage((IMessages) object);
     }
 
     public final void registerCommands(Object[] objects) {
         for (Object object : objects)
-            if (object instanceof ICommands) {
-                ICommands commands = (ICommands) object;
-
-                this.registerMessage(commands.getName(), commands.getSubCommand());
-            }
+            if (object instanceof ICommands)
+                this.registerCommand((ICommands) object);
     }
 
     public final void registerPermissions(Object[] objects) {
         for (Object object : objects)
-            if (object instanceof IPermissions) {
-                IPermissions permissions = (IPermissions) object;
-
-                this.registerPermission(permissions.getName(), permissions.getPermission());
-            }
+            if (object instanceof IPermissions)
+                this.registerPermission((IPermissions) object);
     }
 
     public final void registerQueries(Object[] objects) {
         for (Object object : objects)
-            if (object instanceof ISQLs) {
-                ISQLs sqLs = (ISQLs) object;
-
-                this.registerPermission(sqLs.getName(), sqLs.getSQL());
-            }
+            if (object instanceof ISQLs)
+                this.registerQuery((ISQLs) object);
     }
 
-    public final void registerMessage(String path, String message) {
-        this.setPath(CategoriesEnum.MESSAGES, path, message);
+    public final void registerMessage(IMessages message) {
+        this.setPath(CategoriesEnum.MESSAGES, message.getName(), message.getMessage());
+
+        message.setMessage(this.getMessage(message.getName()));
     }
 
-    public final void registerCommand(String path, String command) {
-        this.setPath(CategoriesEnum.COMMANDS, path, command);
+    public final void registerCommand(ICommands command) {
+        this.setPath(CategoriesEnum.COMMANDS, command.getName(), command.getSubCommand());
+
+        command.setSubCommand(this.getCommand(command.getName()));
     }
 
-    public final void registerPermission(String path, String permissions) {
-        this.setPath(CategoriesEnum.PERMISSIONS, path, permissions);
+    public final void registerPermission(IPermissions permissions) {
+        this.setPath(CategoriesEnum.PERMISSIONS, permissions.getName(), permissions.getPermission());
+
+        permissions.setPermission(this.getPermssion(permissions.getName()));
     }
 
-    public final void registerQuery(String path, String query) {
-        this.setPath(CategoriesEnum.QUERIES, path, query);
+    public final void registerQuery(ISQLs query) {
+        this.setPath(CategoriesEnum.QUERIES, query.getName(), query.getSQL());
+
+        query.setSQL(this.getQuery(query.getName()));
     }
 
     public final String getMessage(String path) {
-        return this.getPath(CategoriesEnum.MESSAGES, path);
+        return this.getString(this.getPath(CategoriesEnum.MESSAGES, path));
     }
 
     public final String getCommand(String path) {
-        return this.getPath(CategoriesEnum.COMMANDS, path);
+        return this.getString(this.getPath(CategoriesEnum.COMMANDS, path));
     }
 
     public final String getPermssion(String path) {
-        return this.getPath(CategoriesEnum.PERMISSIONS, path);
+        return this.getString(this.getPath(CategoriesEnum.PERMISSIONS, path));
     }
 
     public final String getQuery(String path) {
-        return this.getPath(CategoriesEnum.QUERIES, path);
+        return this.getString(this.getPath(CategoriesEnum.QUERIES, path));
     }
 
     public final String getString(String path) {

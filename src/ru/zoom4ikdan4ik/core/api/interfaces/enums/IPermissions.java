@@ -7,7 +7,7 @@ public interface IPermissions {
 
     String getPermission();
 
-    void setPermission(String permission);
+    void setPermission(final String permission);
 
-    boolean hasPermission(CommandSender commandSender);
+    boolean hasPermission(final CommandSender commandSender);
 }
