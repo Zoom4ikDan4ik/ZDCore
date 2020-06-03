@@ -1,8 +1,11 @@
 package ru.zoom4ikdan4ik.core.api.methods;
 
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 import ru.zoom4ikdan4ik.core.api.interfaces.enums.IMessages;
 import ru.zoom4ikdan4ik.core.enums.MessagesEnum;
@@ -69,6 +72,28 @@ public class CoreMethods implements IBase {
 
     public final void sendMessage(final CommandSender sender, final String message) {
         sender.sendMessage(this.color(message));
+    }
+
+    public final void sendMessageAllNearby(final IMessages message, final Player player, final double distance) {
+        this.sendMessageAllNearby(message.getMessage(), player, distance);
+    }
+
+    public final void sendMessageAllNearby(final String message, final Player player, final double distance) {
+        this.sendMessageAllNearby(message, player.getLocation(), distance);
+    }
+
+    public final void sendMessageAllNearby(final IMessages message, final Location location, final double distance) {
+        this.sendMessageAllNearby(message.getMessage(), location, distance);
+    }
+
+    public final void sendMessageAllNearby(final String message, final Location location, final double distance) {
+        for (Player player : Bukkit.getOnlinePlayers()) {
+            final Location playerLocation = player.getLocation();
+            final double distanceToLocation = playerLocation.distanceSquared(location);
+
+            if (distanceToLocation <= distance)
+                this.sendMessage(player, message);
+        }
     }
 
     public final void useScripts(final String script) throws IOException {
