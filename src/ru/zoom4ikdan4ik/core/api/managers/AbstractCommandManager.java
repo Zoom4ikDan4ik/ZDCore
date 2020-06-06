@@ -6,7 +6,6 @@ import org.bukkit.entity.Player;
 import ru.zoom4ikdan4ik.core.api.interfaces.ICommandManager;
 import ru.zoom4ikdan4ik.core.api.interfaces.ISubCommandManager;
 import ru.zoom4ikdan4ik.core.api.interfaces.enums.ICommands;
-import ru.zoom4ikdan4ik.core.enums.CommandsEnum;
 import ru.zoom4ikdan4ik.core.enums.MessagesEnum;
 import ru.zoom4ikdan4ik.core.interfaces.IBase;
 
@@ -21,19 +20,23 @@ public abstract class AbstractCommandManager implements ICommandManager, IBase {
 
     public abstract void registerSubCommands();
 
-    public final ISubCommandManager getSubCommand(CommandsEnum commandsEnum) {
+    public final boolean isRegisteredCommand(final String command) {
+        return this.commands.contains(command);
+    }
+
+    public final ISubCommandManager getSubCommand(final String command) {
         for (SubCommand subCommand : this.subCommands)
-            if (subCommand.getSubCommand().equals(commandsEnum.getSubCommand()))
+            if (subCommand.getSubCommand().equals(command))
                 return subCommand.getSubCommandManager();
 
         return null;
     }
 
-    public final void registerCommand(String command) {
+    public final void registerCommand(final String command) {
         this.commands.add(command);
     }
 
-    public final void registerSubCommand(ICommands commands) {
+    public final void registerSubCommand(final ICommands commands) {
         this.subCommands.add(new SubCommand(commands.getSubCommand(), commands.getSubCommandManager()));
     }
 
@@ -49,16 +52,10 @@ public abstract class AbstractCommandManager implements ICommandManager, IBase {
 
     @Override
     public final boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        if (args.length > 0) {
-            String commander = args[0];
-            CommandsEnum commands = null;
-
-            for (CommandsEnum commandsEnum : CommandsEnum.values())
-                if (commandsEnum.getSubCommand().equals(commander))
-                    commands = commandsEnum;
-
-            if (commands != null) {
-                ISubCommandManager subCommandManager = this.getSubCommand(commands);
+        if (this.isRegisteredCommand(command.getName())) {
+            if (args.length > 0) {
+                String subCommand = args[0];
+                ISubCommandManager subCommandManager = this.getSubCommand(subCommand);
 
                 if (subCommandManager != null) {
                     if (!subCommandManager.getPermission().hasPermission(sender)) {
@@ -82,8 +79,8 @@ public abstract class AbstractCommandManager implements ICommandManager, IBase {
 
                     subCommandManager.onCommand(sender, command, label, args);
                 } else this.coreMethods.sendMessage(sender, MessagesEnum.NOT_FOUND_PARAMETERS);
-            } else this.coreMethods.sendMessage(sender, MessagesEnum.NOT_FOUND_COMMAND);
-        } else this.coreMethods.sendMessage(sender, MessagesEnum.NUMBER_EXCEPTIONS);
+            } else this.coreMethods.sendMessage(sender, MessagesEnum.NUMBER_EXCEPTIONS);
+        } else this.coreMethods.sendMessage(sender, MessagesEnum.NOT_FOUND_COMMAND);
 
         return true;
     }
