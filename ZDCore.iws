@@ -5,12 +5,10 @@
       <change beforePath="$PROJECT_DIR$/ZDCore.iws" beforeDir="false" afterPath="$PROJECT_DIR$/ZDCore.iws" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/ZDCore.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/ZDCore.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/libraries/craftbukkit/craftbukkit-1.7.10-R0.1-20140808.005431-8.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/api/RegistrationAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/api/RegistrationAPI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/api/managers/AbstractConfigManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/api/managers/AbstractConfigManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/plugin.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/api/methods/BukkitMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/api/methods/BukkitMethods.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/api/methods/CoreMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/api/methods/CoreMethods.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/api/methods/PermissionsMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/api/methods/PermissionsMethods.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/managers/ConfigManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/managers/ConfigManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/managers/PluginsManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/managers/PluginsManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +77,11 @@
       <workItem from="1591549716753" duration="61000" />
       <workItem from="1591609209822" duration="1630000" />
       <workItem from="1591629543539" duration="2770000" />
-      <workItem from="1591634490613" duration="148000" />
+      <workItem from="1591634490613" duration="300000" />
+      <workItem from="1591637175286" duration="70000" />
+      <workItem from="1591643202386" duration="827000" />
+      <workItem from="1591648402107" duration="364000" />
+      <workItem from="1591650446919" duration="64000" />
     </task>
     <task id="LOCAL-00001" summary="ZDCore V6.0">
       <created>1590944670692</created>
@@ -200,7 +202,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591449374410</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="ZDCore V6.7&#10;&#10;[F] Some fixes for RegistrationAPI, AbstractConfigManager;&#10;[+] Method Entity getPointedEntity(Player player);">
+      <created>1591634721120</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1591634721120</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -218,7 +227,8 @@
     <MESSAGE value="Release ZDCore V6.5" />
     <MESSAGE value="[+] New methods for send messages nearby location for players. Supported IMessages and default String" />
     <MESSAGE value="ZDCore V6.6&#10;&#10;[F] AbstractCommandManager changed, fixed use commands from modules" />
-    <option name="LAST_COMMIT_MESSAGE" value="ZDCore V6.6&#10;&#10;[F] AbstractCommandManager changed, fixed use commands from modules" />
+    <MESSAGE value="ZDCore V6.7&#10;&#10;[F] Some fixes for RegistrationAPI, AbstractConfigManager;&#10;[+] Method Entity getPointedEntity(Player player);" />
+    <option name="LAST_COMMIT_MESSAGE" value="ZDCore V6.7&#10;&#10;[F] Some fixes for RegistrationAPI, AbstractConfigManager;&#10;[+] Method Entity getPointedEntity(Player player);" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -240,10 +250,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="430" y="83" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1366.728@0.0.1366.728" timestamp="1590945649474" />
-    <state x="52" y="0" key="CommitChangelistDialog2" timestamp="1591634618132">
+    <state x="52" y="0" key="CommitChangelistDialog2" timestamp="1591634718158">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="52" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1591634618132" />
+    <state x="52" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1591634718158" />
     <state x="474" y="183" key="FileChooserDialogImpl" timestamp="1590944463326">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -265,23 +275,23 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1590949516543" />
-    <state x="313" y="0" key="SettingsEditor" timestamp="1591630524708">
+    <state x="313" y="0" key="SettingsEditor" timestamp="1591643357401">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="313" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1591630524708" />
+    <state x="313" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1591643357401" />
     <state x="440" y="94" key="SettingsEditor/0.0.1920.1040/-1366.312.1366.728@0.0.1920.1040" timestamp="1590506344621" />
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1591449378067">
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1591634742902">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1591449378067" />
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1591634742902" />
     <state x="285" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1591108586348">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="285" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1366.728@0.0.1366.728" timestamp="1591108586348" />
-    <state x="390" y="99" width="585" height="530" key="find.popup" timestamp="1591104698365">
+    <state x="390" y="99" width="585" height="530" key="find.popup" timestamp="1591643292903">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="390" y="99" width="585" height="530" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1591104698365" />
+    <state x="390" y="99" width="585" height="530" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1591643292903" />
     <state x="339" y="162" key="run.anything.popup" timestamp="1590998769835">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

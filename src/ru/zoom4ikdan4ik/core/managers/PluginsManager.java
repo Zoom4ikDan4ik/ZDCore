@@ -77,7 +77,7 @@ public final class PluginsManager implements IBase {
                     this.loggerUtils.info(this.corePlugin, "%% found and disabled! =|", plugin.getName());
                 }
             else
-                this.loggerUtils.info(this.corePlugin, "%% not found! =(", plugin.getName());
+                this.loggerUtils.info(this.corePlugin, "%% not found! =(", pluginActivity.getName());
         }
 
         this.setPluginActivities(pluginActivities);
@@ -94,25 +94,30 @@ public final class PluginsManager implements IBase {
     }
 
     public final void put(final String key, final boolean flag) {
-        this.addPluginActivities(new PluginActivity(this.bukkitPluginManager.getPlugin(key), flag));
+        this.addPluginActivities(new PluginActivity(this.bukkitPluginManager.getPlugin(key), key, flag));
     }
 
     public final class PluginActivity {
         private final Plugin plugin;
+        private final String name;
         private boolean active;
 
-        public PluginActivity(final Plugin plugin) {
-            this.plugin = plugin;
-            this.active = true;
+        public PluginActivity(final Plugin plugin, final String name) {
+            this(plugin, name, true);
         }
 
-        public PluginActivity(final Plugin plugin, final boolean active) {
+        public PluginActivity(final Plugin plugin, final String name, final boolean active) {
             this.plugin = plugin;
+            this.name = name;
             this.active = active;
         }
 
         public final Plugin getPlugin() {
             return this.plugin;
+        }
+
+        public final String getName() {
+            return this.name;
         }
 
         public final boolean isActive() {

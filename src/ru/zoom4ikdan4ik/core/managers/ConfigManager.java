@@ -10,6 +10,7 @@ import ru.zoom4ikdan4ik.core.enums.PermissionsEnum;
 public final class ConfigManager extends AbstractConfigManager {
     public String server, scripts_path;
     public World main_world;
+    public double dotPoint;
 
     public ConfigManager(Plugin plugin) {
         super(plugin);
@@ -20,6 +21,7 @@ public final class ConfigManager extends AbstractConfigManager {
         this.server = this.getString("Server", "server");
         this.main_world = this.getWorld("Main world", this.bukkitMethods.getWorlds().get(0).getName());
         this.scripts_path = this.getString("Script path", "/home/scripts/");
+        this.dotPoint = this.getDouble("Dot point", 0.99);
 
         this.registerCommands(CommandsEnum.values());
         this.registerMessages(MessagesEnum.values());

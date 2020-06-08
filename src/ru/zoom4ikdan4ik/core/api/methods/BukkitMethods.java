@@ -44,7 +44,7 @@ public class BukkitMethods implements IBase {
             final Location entityLocation = entity.getLocation();
             final Vector vector = entityLocation.toVector().subtract(playerLocation.toVector());
 
-            if (vector.normalize().dot(playerLocation.getDirection().normalize()) >= 0.85)
+            if (vector.normalize().dot(playerLocation.getDirection().normalize()) >= this.configManager.dotPoint)
                 if (lengthSquared > entityLocation.getDirection().normalize().crossProduct(vector).lengthSquared()) {
                     pointed = entity;
                     lengthSquared = entityLocation.getDirection().normalize().crossProduct(vector).lengthSquared();
