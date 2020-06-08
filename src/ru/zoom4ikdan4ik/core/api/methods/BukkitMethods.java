@@ -1,11 +1,14 @@
 package ru.zoom4ikdan4ik.core.api.methods;
 
 import org.bukkit.Bukkit;
+import org.bukkit.Location;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.World;
 import org.bukkit.block.Block;
+import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.util.Vector;
 import ru.zoom4ikdan4ik.core.interfaces.IBase;
 
 import javax.annotation.Nonnull;
@@ -28,11 +31,34 @@ public class BukkitMethods implements IBase {
         return Bukkit.getPlayer(player);
     }
 
-    public final void useCommand(final String command) {
+    public final Entity getPointedEntity(@Nonnull final Player player) {
+        final Location playerLocation = player.getLocation();
+        final int distance = Bukkit.getViewDistance();
+
+        Entity pointed = null;
+        double lengthSquared = Integer.MAX_VALUE;
+
+        List<Entity> entities = player.getNearbyEntities(distance, distance, distance);
+
+        for (Entity entity : entities) {
+            final Location entityLocation = entity.getLocation();
+            final Vector vector = entityLocation.toVector().subtract(playerLocation.toVector());
+
+            if (vector.normalize().dot(playerLocation.getDirection().normalize()) >= 0.85)
+                if (lengthSquared > entityLocation.getDirection().normalize().crossProduct(vector).lengthSquared()) {
+                    pointed = entity;
+                    lengthSquared = entityLocation.getDirection().normalize().crossProduct(vector).lengthSquared();
+                }
+        }
+
+        return pointed;
+    }
+
+    public final void useCommand(@Nonnull final String command) {
         Bukkit.dispatchCommand(Bukkit.getConsoleSender(), command);
     }
 
-    public final void broadcast(final String broadcast) {
+    public final void broadcast(@Nonnull final String broadcast) {
         Bukkit.broadcastMessage(this.coreMethods.color(broadcast));
     }
 

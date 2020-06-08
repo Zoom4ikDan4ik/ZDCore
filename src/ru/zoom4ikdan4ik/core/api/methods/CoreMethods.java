@@ -27,7 +27,7 @@ public class CoreMethods implements IBase {
         return this.getSystemTime() / 1000;
     }
 
-    public final String color(final String string) {
+    public final String color(@Nonnull final String string) {
         return ChatColor.translateAlternateColorCodes('&', string);
     }
 
@@ -48,7 +48,7 @@ public class CoreMethods implements IBase {
         return this.getPathServer().replace(this.configManager.server, server);
     }
 
-    public final void sendMessageQuery(final CommandSender sender, final String start) {
+    public final void sendMessageQuery(@Nonnull final CommandSender sender, @Nonnull final String start) {
         String message = null;
 
         for (final MessagesEnum messagesEnum : MessagesEnum.values())
@@ -58,7 +58,7 @@ public class CoreMethods implements IBase {
         this.sendMessage(sender, message);
     }
 
-    public final String getQuery(final String start, final List<String> queriesList) {
+    public final String getQuery(@Nonnull final String start, @Nonnull final List<String> queriesList) {
         for (final String queries : queriesList)
             if (queries.startsWith(start))
                 return queries;
@@ -66,27 +66,27 @@ public class CoreMethods implements IBase {
         return null;
     }
 
-    public final void sendMessage(final CommandSender sender, final IMessages message) {
+    public final void sendMessage(@Nonnull final CommandSender sender, @Nonnull final IMessages message) {
         this.sendMessage(sender, message.getMessage());
     }
 
-    public final void sendMessage(final CommandSender sender, final String message) {
+    public final void sendMessage(@Nonnull final CommandSender sender, @Nonnull final String message) {
         sender.sendMessage(this.color(message));
     }
 
-    public final void sendMessageAllNearby(final IMessages message, final Player player, final double distance) {
+    public final void sendMessageAllNearby(@Nonnull final IMessages message, @Nonnull final Player player, @Nonnull final double distance) {
         this.sendMessageAllNearby(message.getMessage(), player, distance);
     }
 
-    public final void sendMessageAllNearby(final String message, final Player player, final double distance) {
+    public final void sendMessageAllNearby(@Nonnull final String message, @Nonnull final Player player, @Nonnull final double distance) {
         this.sendMessageAllNearby(message, player.getLocation(), distance);
     }
 
-    public final void sendMessageAllNearby(final IMessages message, final Location location, final double distance) {
+    public final void sendMessageAllNearby(@Nonnull final IMessages message, @Nonnull final Location location, @Nonnull final double distance) {
         this.sendMessageAllNearby(message.getMessage(), location, distance);
     }
 
-    public final void sendMessageAllNearby(final String message, final Location location, final double distance) {
+    public final void sendMessageAllNearby(@Nonnull final String message, @Nonnull final Location location, @Nonnull final double distance) {
         for (Player player : Bukkit.getOnlinePlayers()) {
             final Location playerLocation = player.getLocation();
             final double distanceToLocation = playerLocation.distanceSquared(location);
@@ -96,7 +96,7 @@ public class CoreMethods implements IBase {
         }
     }
 
-    public final void useScripts(final String script) throws IOException {
+    public final void useScripts(@Nonnull final String script) throws IOException {
         final File file = new File(this.configManager.scripts_path + script);
 
         if (!file.exists())
@@ -105,7 +105,7 @@ public class CoreMethods implements IBase {
         Runtime.getRuntime().exec("sh " + file.getAbsolutePath());
     }
 
-    public final File createConfigYML(final String config, final Plugin plugin) {
+    public final File createConfigYML(@Nonnull final String config, @Nonnull final Plugin plugin) {
         File file = null;
 
         if (config != null)
@@ -117,7 +117,7 @@ public class CoreMethods implements IBase {
 
             if (resourceAsStream != null)
                 try {
-                    FileOutputStream fileOutputStream = new FileOutputStream(file);
+                    final FileOutputStream fileOutputStream = new FileOutputStream(file);
                     byte[] buffer = new byte[65536];
                     int n;
 

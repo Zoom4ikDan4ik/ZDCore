@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="657eed47-b0b7-42c3-a634-bea3f30ad946" name="Default Changelist" comment="">
+    <list default="true" id="657eed47-b0b7-42c3-a634-bea3f30ad946" name="Default Changelist" comment="ZDCore V6.7&#10;&#10;[F] AbstractCommandManager changed, fixed use commands from modules">
       <change beforePath="$PROJECT_DIR$/ZDCore.iws" beforeDir="false" afterPath="$PROJECT_DIR$/ZDCore.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/ZDCore.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/api/managers/AbstractCommandManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/api/managers/AbstractCommandManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/ZDCore.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/ZDCore.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libraries/craftbukkit/craftbukkit-1.7.10-R0.1-20140808.005431-8.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/api/RegistrationAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/api/RegistrationAPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/api/managers/AbstractConfigManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/api/managers/AbstractConfigManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/api/methods/BukkitMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/api/methods/BukkitMethods.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/api/methods/CoreMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/api/methods/CoreMethods.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/api/methods/PermissionsMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/api/methods/PermissionsMethods.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/managers/ConfigManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/managers/ConfigManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +47,7 @@
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.17382812" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -66,7 +73,13 @@
       <workItem from="1591110244257" duration="132000" />
       <workItem from="1591110462832" duration="737000" />
       <workItem from="1591211727394" duration="3325000" />
-      <workItem from="1591448395019" duration="771000" />
+      <workItem from="1591448395019" duration="991000" />
+      <workItem from="1591451094609" duration="91000" />
+      <workItem from="1591464910251" duration="3349000" />
+      <workItem from="1591549716753" duration="61000" />
+      <workItem from="1591609209822" duration="1630000" />
+      <workItem from="1591629543539" duration="2770000" />
+      <workItem from="1591634490613" duration="148000" />
     </task>
     <task id="LOCAL-00001" summary="ZDCore V6.0">
       <created>1590944670692</created>
@@ -180,7 +193,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591214228079</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="ZDCore V6.6&#10;&#10;[F] AbstractCommandManager changed, fixed use commands from modules">
+      <created>1591449374410</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1591449374410</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -197,7 +217,8 @@
     <MESSAGE value="ZDCore V6.5" />
     <MESSAGE value="Release ZDCore V6.5" />
     <MESSAGE value="[+] New methods for send messages nearby location for players. Supported IMessages and default String" />
-    <option name="LAST_COMMIT_MESSAGE" value="[+] New methods for send messages nearby location for players. Supported IMessages and default String" />
+    <MESSAGE value="ZDCore V6.6&#10;&#10;[F] AbstractCommandManager changed, fixed use commands from modules" />
+    <option name="LAST_COMMIT_MESSAGE" value="ZDCore V6.6&#10;&#10;[F] AbstractCommandManager changed, fixed use commands from modules" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -207,10 +228,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="137" y="18" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1591108235546" />
-    <state x="488" y="70" key="#com.intellij.ide.util.MemberChooser" timestamp="1591107115441">
+    <state x="488" y="70" key="#com.intellij.ide.util.MemberChooser" timestamp="1591610086918">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="488" y="70" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1591107115441" />
+    <state x="488" y="70" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1591610086918" />
     <state x="172" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1590943975784">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -219,10 +240,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="430" y="83" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1366.728@0.0.1366.728" timestamp="1590945649474" />
-    <state x="52" y="0" key="CommitChangelistDialog2" timestamp="1591214226051">
+    <state x="52" y="0" key="CommitChangelistDialog2" timestamp="1591634618132">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="52" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1591214226051" />
+    <state x="52" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1591634618132" />
     <state x="474" y="183" key="FileChooserDialogImpl" timestamp="1590944463326">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -244,15 +265,15 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1590949516543" />
-    <state x="313" y="0" key="SettingsEditor" timestamp="1590944528038">
+    <state x="313" y="0" key="SettingsEditor" timestamp="1591630524708">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="313" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1590944528038" />
+    <state x="313" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1591630524708" />
     <state x="440" y="94" key="SettingsEditor/0.0.1920.1040/-1366.312.1366.728@0.0.1920.1040" timestamp="1590506344621" />
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1591214231476">
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1591449378067">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1591214231476" />
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1591449378067" />
     <state x="285" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1591108586348">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

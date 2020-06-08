@@ -45,14 +45,15 @@ public final class RegistrationAPI implements IBase {
     }
 
     public final static void registerConfigManager(final Plugin plugin, final List<AbstractConfigManager> abstractConfigManagers) {
-        for (final AbstractConfigManager abstractConfigManager : abstractConfigManagers) {
-            loggerUtils.info(plugin, "Loading configs...");
+        if (abstractConfigManagers != null)
+            for (final AbstractConfigManager abstractConfigManager : abstractConfigManagers) {
+                loggerUtils.info(plugin, "Loading configs...");
 
-            abstractConfigManager.setFileConfig(coreMethods.createConfigYML(abstractConfigManager.getName(), plugin));
-            abstractConfigManager.setConfig(YamlConfiguration.loadConfiguration(abstractConfigManager.getFileConfig()));
-            abstractConfigManager.loadConfig();
-            abstractConfigManager.save();
-        }
+                abstractConfigManager.setFileConfig(coreMethods.createConfigYML(abstractConfigManager.getName(), plugin));
+                abstractConfigManager.setConfig(YamlConfiguration.loadConfiguration(abstractConfigManager.getFileConfig()));
+                abstractConfigManager.loadConfig();
+                abstractConfigManager.save();
+            }
     }
 
     public final static void registerSQLManager(final Plugin plugin, final AbstractSQLManager abstractSQLManager) {

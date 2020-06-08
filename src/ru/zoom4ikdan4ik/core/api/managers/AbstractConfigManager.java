@@ -200,21 +200,24 @@ public abstract class AbstractConfigManager implements IConfigManager, IBase {
     public final World getWorld(String path, String option) {
         this.setPath(path, option);
 
-        return Bukkit.getWorld(this.getConfig().getString(path));
+        String world = this.getConfig().getString(path);
+
+        if (world != null)
+            return Bukkit.getWorld(world);
+        else return Bukkit.getWorlds().get(0);
     }
 
     public final ConfigurationSection getConfigurationSection(String path) {
         return this.getConfig().getConfigurationSection(path);
     }
 
+    public final void setPath(String path, Object option) {
+        this.setPath(CategoriesEnum.CONFIG, path, option);
+    }
+
     public final void setPath(CategoriesEnum categoriesEnum, String path, Object option) {
         if (!this.isSet(categoriesEnum, path))
             this.getConfig().set(this.getPath(categoriesEnum.getCategory(), path), option);
-    }
-
-    public final void setPath(String path, Object option) {
-        if (!this.isSet(path))
-            this.getConfig().set(path, option);
     }
 
     public final void setValue(String path, Object option) {
@@ -243,7 +246,7 @@ public abstract class AbstractConfigManager implements IConfigManager, IBase {
     }
 
     public enum CategoriesEnum {
-        MESSAGES("messages"), PERMISSIONS("permissions"), COMMANDS("commands"), QUERIES("queries"), CUSTOMS("customs");
+        CONFIG("config"), MESSAGES("messages"), PERMISSIONS("permissions"), COMMANDS("commands"), QUERIES("queries"), CUSTOMS("customs");
 
         private String category;
 
