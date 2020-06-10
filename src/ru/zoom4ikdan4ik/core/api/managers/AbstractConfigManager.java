@@ -124,13 +124,13 @@ public abstract class AbstractConfigManager implements IConfigManager, IBase {
     }
 
     public final String getString(String path) {
-        return this.getConfig().getString(path);
+        return this.getConfig().getString(this.getPath(path));
     }
 
     public final String getString(String path, String option) {
         this.setPath(path, option);
 
-        return this.getConfig().getString(path);
+        return this.getConfig().getString(this.getPath(path));
     }
 
     public final int getInt(String path) {
@@ -140,7 +140,7 @@ public abstract class AbstractConfigManager implements IConfigManager, IBase {
     public final int getInt(String path, int option) {
         this.setPath(path, option);
 
-        return this.getConfig().getInt(path);
+        return this.getConfig().getInt(this.getPath(path));
     }
 
     public final boolean getBoolean(String path) {
@@ -150,7 +150,7 @@ public abstract class AbstractConfigManager implements IConfigManager, IBase {
     public final boolean getBoolean(String path, boolean option) {
         this.setPath(path, option);
 
-        return this.getConfig().getBoolean(path);
+        return this.getConfig().getBoolean(this.getPath(path));
     }
 
     public final double getDouble(String path) {
@@ -160,27 +160,27 @@ public abstract class AbstractConfigManager implements IConfigManager, IBase {
     public final double getDouble(String path, double option) {
         this.setPath(path, option);
 
-        return this.getConfig().getDouble(path);
+        return this.getConfig().getDouble(this.getPath(path));
     }
 
     public final long getLong(String path) {
-        return this.getConfig().getLong(path);
+        return this.getConfig().getLong(this.getPath(path));
     }
 
     public final long getLong(String path, long option) {
         this.setPath(path, option);
 
-        return this.getConfig().getLong(path);
+        return this.getConfig().getLong(this.getPath(path));
     }
 
     public final List<String> getStringList(String path) {
-        return this.getConfig().getStringList(path);
+        return this.getConfig().getStringList(this.getPath(path));
     }
 
     public final List<String> getStringList(String path, List<String> option) {
         this.setPath(path, option);
 
-        return this.getConfig().getStringList(path);
+        return this.getConfig().getStringList(this.getPath(path));
     }
 
     public final List<?> getList(String path) {
@@ -190,7 +190,7 @@ public abstract class AbstractConfigManager implements IConfigManager, IBase {
     public final List<?> getList(String path, List<?> option) {
         this.setPath(path, option);
 
-        return this.getConfig().getList(path);
+        return this.getConfig().getList(this.getPath(path));
     }
 
     public final World getWorld(String path) {
@@ -208,7 +208,7 @@ public abstract class AbstractConfigManager implements IConfigManager, IBase {
     }
 
     public final ConfigurationSection getConfigurationSection(String path) {
-        return this.getConfig().getConfigurationSection(path);
+        return this.getConfig().getConfigurationSection(this.getPath(path));
     }
 
     public final void setPath(String path, Object option) {

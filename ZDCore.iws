@@ -3,12 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="657eed47-b0b7-42c3-a634-bea3f30ad946" name="Default Changelist" comment="ZDCore V6.7&#10;&#10;[F] AbstractCommandManager changed, fixed use commands from modules">
       <change beforePath="$PROJECT_DIR$/ZDCore.iws" beforeDir="false" afterPath="$PROJECT_DIR$/ZDCore.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/ZDCore.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/ZDCore.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libraries/craftbukkit/craftbukkit-1.7.10-R0.1-20140808.005431-8.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/plugin.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/api/methods/BukkitMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/api/methods/BukkitMethods.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/managers/ConfigManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/managers/ConfigManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/managers/PluginsManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/managers/PluginsManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/api/managers/AbstractConfigManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/api/managers/AbstractConfigManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,6 +77,7 @@
       <workItem from="1591643202386" duration="827000" />
       <workItem from="1591648402107" duration="364000" />
       <workItem from="1591650446919" duration="64000" />
+      <workItem from="1591787620992" duration="96000" />
     </task>
     <task id="LOCAL-00001" summary="ZDCore V6.0">
       <created>1590944670692</created>
