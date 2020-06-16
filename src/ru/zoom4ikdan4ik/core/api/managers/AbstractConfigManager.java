@@ -221,15 +221,15 @@ public abstract class AbstractConfigManager implements IConfigManager, IBase {
     }
 
     public final void setValue(String path, Object option) {
-        this.getConfig().set(path, option);
+        this.getConfig().set(this.getPath(CategoriesEnum.CONFIG, path), option);
     }
 
     public final boolean isSet(CategoriesEnum categoriesEnum, String path) {
-        return this.isSet(this.getPath(categoriesEnum.getCategory(), path));
+        return this.getConfig().isSet(this.getPath(categoriesEnum.getCategory(), path));
     }
 
     public final boolean isSet(String path) {
-        return this.getConfig().isSet(path);
+        return this.getConfig().isSet(this.getPath(CategoriesEnum.CONFIG, path));
     }
 
     public final String getPath(Object... objects) {

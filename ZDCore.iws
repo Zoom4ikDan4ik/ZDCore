@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="657eed47-b0b7-42c3-a634-bea3f30ad946" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/ZDCore.iws" beforeDir="false" afterPath="$PROJECT_DIR$/ZDCore.iws" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/ZDCore.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/api/RegistrationAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/api/RegistrationAPI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/api/managers/AbstractConfigManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/zoom4ikdan4ik/core/api/managers/AbstractConfigManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -78,7 +80,9 @@
       <workItem from="1591648402107" duration="364000" />
       <workItem from="1591650446919" duration="64000" />
       <workItem from="1591787620992" duration="186000" />
-      <workItem from="1591787934175" duration="93000" />
+      <workItem from="1591787934175" duration="392000" />
+      <workItem from="1591797016280" duration="948000" />
+      <workItem from="1591959110726" duration="9000" />
     </task>
     <task id="LOCAL-00001" summary="ZDCore V6.0">
       <created>1590944670692</created>
@@ -213,7 +217,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591787796643</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="ZDCore V6.8&#10;&#10;[F] Fixed gets values of Config [2]">
+      <created>1591788303300</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1591788303300</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -233,7 +244,8 @@
     <MESSAGE value="ZDCore V6.6&#10;&#10;[F] AbstractCommandManager changed, fixed use commands from modules" />
     <MESSAGE value="ZDCore V6.7&#10;&#10;[F] Some fixes for RegistrationAPI, AbstractConfigManager;&#10;[+] Method Entity getPointedEntity(Player player);" />
     <MESSAGE value="ZDCore V6.8&#10;&#10;[F] Fixed gets values of Config" />
-    <option name="LAST_COMMIT_MESSAGE" value="ZDCore V6.8&#10;&#10;[F] Fixed gets values of Config" />
+    <MESSAGE value="ZDCore V6.8&#10;&#10;[F] Fixed gets values of Config [2]" />
+    <option name="LAST_COMMIT_MESSAGE" value="ZDCore V6.8&#10;&#10;[F] Fixed gets values of Config [2]" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -255,10 +267,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="430" y="83" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1366.728@0.0.1366.728" timestamp="1590945649474" />
-    <state x="52" y="0" key="CommitChangelistDialog2" timestamp="1591787794915">
+    <state x="52" y="0" key="CommitChangelistDialog2" timestamp="1591788301513">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="52" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1591787794915" />
+    <state x="52" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1591788301513" />
     <state x="474" y="183" key="FileChooserDialogImpl" timestamp="1590944463326">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -280,23 +292,23 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1590949516543" />
-    <state x="313" y="0" key="SettingsEditor" timestamp="1591643357401">
+    <state x="313" y="0" key="SettingsEditor" timestamp="1591959114346">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="313" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1591643357401" />
+    <state x="313" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1591959114346" />
     <state x="440" y="94" key="SettingsEditor/0.0.1920.1040/-1366.312.1366.728@0.0.1920.1040" timestamp="1590506344621" />
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1591787800508">
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1591788306299">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1591787800508" />
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1591788306299" />
     <state x="285" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1591108586348">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="285" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1366.728@0.0.1366.728" timestamp="1591108586348" />
-    <state x="390" y="99" width="585" height="530" key="find.popup" timestamp="1591643292903">
+    <state x="390" y="99" width="585" height="530" key="find.popup" timestamp="1591797553882">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="390" y="99" width="585" height="530" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1591643292903" />
+    <state x="390" y="99" width="585" height="530" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1591797553882" />
     <state x="339" y="162" key="run.anything.popup" timestamp="1590998769835">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

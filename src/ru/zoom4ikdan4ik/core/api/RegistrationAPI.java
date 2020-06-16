@@ -29,7 +29,7 @@ public final class RegistrationAPI implements IBase {
      * Registration of plugins, processing of their managers
      */
     public final static void registerPlugin(final ICore manager, final Plugin plugin) {
-        long start = coreMethods.getSystemTime();
+        final long start = coreMethods.getSystemTime();
 
         if (!corePlugin.getName().equalsIgnoreCase(plugin.getName()))
             plugins.put(plugin, manager);
@@ -39,7 +39,7 @@ public final class RegistrationAPI implements IBase {
         registerSchedulerManager(plugin, manager.getSchedulerManager());
         registerCommandManager(plugin, manager.getCommandManager());
 
-        long end = coreMethods.getSystemTime();
+        final long end = coreMethods.getSystemTime();
 
         loggerUtils.info(plugin, "Started with %% sec.", ((end - start) / 1000.0));
     }
